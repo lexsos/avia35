@@ -4,6 +4,25 @@
     <title>avia35</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <meta charset="utf-8">
+    <style>
+      .carousel .item {
+        -webkit-transition: opacity 2s;
+        -moz-transition: opacity 2s;
+        -ms-transition: opacity 2s;
+        -o-transition: opacity 2s;
+         transition: opacity 2s;
+      }
+      .carousel .active.left {
+        left:0;
+        opacity:0;
+        z-index:2;
+      }
+      .carousel .next {
+        left:0;
+        opacity:1;
+        z-index:1;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -37,8 +56,10 @@
           </div>
         </div>
         <!-- Carousel nav -->
+        <!--
         <a class="carousel-control left" href="#top-slider" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#top-slider" data-slide="next">&rsaquo;</a>
+        -->
       </div>
       <!-- End top slider -->
 
@@ -46,15 +67,25 @@
       <div class="navbar">
         <div class="navbar-inner" style="border-radius: 0 0 4px 4px;">
           <ul class="nav">
-            <li class="active"><a href="#">На главную</a></li>
+            <li class="active">
+              <a href="#" style="padding-left: 10px; padding-right: 10px;">На главную</a>
+            </li>
+            <li><a href="#">Расписание</a></li>
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Новости</a></li>
             <li><a href="#">Документы</a></li>
-            <li><a href="#">Расписание</a></li>
             <li><a href="#">Авиапарк</a></li>
-            <li><a href="#">История</a></li>
             <li><a href="#">Схема проезда</a></li>
-            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <!--
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Аэропорт</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">История</a></li>
+              </ul>
+            </li>
+            -->
           </ul>
         </div>
       </div>
@@ -102,7 +133,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $('#top-slider').carousel()
+        $('#top-slider').carousel({interval: 10000});
       })
     </script>
   </body>
