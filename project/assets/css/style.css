@@ -36,3 +36,38 @@
 .down-navbar .pull-right .muted {
     margin-left: 20px;
 }
+
+.table thead th {
+    background-color: #656565;
+    border-color:#656565;
+    color: white;
+}
+
+.news-image {
+    position: relative;
+    width: 100%; /* for IE 6 */
+}
+
+.news-image span {
+    position: absolute;
+    top: 175px;
+    left: 5px;
+    color: white;
+    font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0px  5px 0px 5px ;
+}
+
+.news-img-inner {
+    float:left;
+    padding: 25px  25px 25px 25px ;
+}
+
+.news-date-inner {
+    text-align: right;
+}
+
+.park-thumbnails {
+    min-height: 350px;
+}

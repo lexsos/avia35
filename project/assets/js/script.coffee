@@ -1,4 +1,4 @@
 $ = jQuery
 $(document).ready =>
-    $('#top-slider').carousel(interval: 5000)
+    $('#top-slider').carousel(interval: 10000)
 

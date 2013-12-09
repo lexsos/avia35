@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+
+{% block main_content %}
+
+  <ul class="thumbnails">
+    <li class="span12">
+      <div class="thumbnail">
+        <div class="row">
+          <div class="span4">
+            <div class="news-image">
+              <img src="{{STATIC_URL}}media/3382.jpg" alt="">
+              <span>01.12.2013</span>
+            </div>
+          </div>
+          <div class="span7">
+              <a href="#"><h3>Суд рассмотрит иск Dexter к авиакомпании "Татарстан" на 35 млн рублей 15 января</h3></a>
+              <p>Арбитражный суд Москвы назначил на 15 января предварительные слушания по иску первого российского воздушного такси Dexter (ЗАО "Авиа Менеджмент Груп") о взыскании около 35 млн рублей с ОАО "Авиакомпания "Татарстан", самолет которой в ноябре разбился при посадке в аэропорту Казани.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="span12">
+      <div class="thumbnail">
+        <div class="row">
+          <div class="span4">
+            <div class="news-image">
+              <img src="{{STATIC_URL}}media/6367.jpg" alt="">
+              <span>02.12.2013</span>
+            </div>
+          </div>
+          <div class="span7">
+              <a href="#"><h3>EADS планирует сократить от 5 до 6 тыс сотрудников</h3></a>
+              <p>Европейская аэрокосмическая компания EADS планирует сократить от 5 тыс. до 6 тыс. сотрудников и продать свои штаб-квартиры в Париже в рамках программы реорганизации компании. Ее детальный план может быть озвучен представителями компании уже сегодня.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="span12">
+      <div class="thumbnail">
+        <div class="row">
+          <div class="span4">
+            <div class="news-image">
+              <img src="{{STATIC_URL}}media/11349.jpg" alt="">
+              <span>03.12.2013</span>
+            </div>
+          </div>
+          <div class="span7">
+              <a href="#"><h3>Пуск РН "Союз-У" с кораблем "Прогресс М-22М" с космодрома "Байконур"</h3></a>
+              <p>Пуск ракеты-носителя «Союз-У» с транспортным грузовым кораблем (ТГК) «Прогресс М-22М» с космодрома «Байконур» запланирован на 5 февраля следующего года. Этим пуском будет открыто выполнение российской космической программы 2014 года.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="pagination pagination-centered">
+    <ul>
+      <li class="disabled"><a href="#">«</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li class="disabled"><a href="#">...</a></li>
+      <li><a href="#">99</a></li>
+      <li><a href="#">»</a></li>
+    </ul>
+  </div>
+
+{% endblock %}

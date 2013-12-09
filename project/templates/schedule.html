@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block main_content %}
+  <table class="table table-bordered table-hover">
+    <caption>Расписание полетов</caption>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Рейс</th>
+        <th>Время вылета</th>
+        <th>Время прилета</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Вологда - С.Петербург</td>
+        <td>
+            8:00
+            <br>
+            регулярность: вт, ср
+        </td>
+        <td>9:00</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>С.Петербург - Вологда</td>
+        <td>
+            18:00
+            <br>
+            регулярность: вт, ср
+        </td>
+        <td>19:00</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>В.Устюг - Москва</td>
+        <td>
+            8:00
+            <br>
+            регулярность: вт, ср
+        </td>
+        <td>9:00</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Москва - В.Устюг</td>
+        <td>
+            18:00
+            <br>
+            регулярность: вт, ср
+        </td>
+        <td>19:00</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

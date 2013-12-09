@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block main_content %}
+  <table class="table table-bordered table-hover">
+    <caption>Документы</caption>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Тип</th>
+        <th>Название</th>
+        <th>Размер</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><span class="label">PDF</span></td>
+        <td><a href="#">Устав ОАО Вологодское авиационное предприятие</a></td>
+        <td>1Кб</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><span class="label">DOC</span></td>
+        <td><a href="#">Свидетельство о внесении записи в Единый Государственный Реестр Юридических Лиц.</a></td>
+        <td>1Кб</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><span class="label">ZIP</span></td>
+        <td><a href="#">Годовой отчёт и финансовая отчетность ОАО "Вологодское авиационное предприятие за 2012 год.</a></td>
+        <td>1Кб</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}
