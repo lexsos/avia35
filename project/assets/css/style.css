@@ -1,0 +1,38 @@
+.top-navbar {
+    margin-bottom: 0;
+}
+
+.top-navbar .navbar-inner {
+    border-radius: 4px 4px 0 0;
+}
+
+.top-slider {
+    margin-bottom: 0;
+}
+
+.top-carousel-caption {
+    padding: 5px;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    padding-left: 25px;
+}
+
+.main-navbar .navbar-inner {
+    border-radius: 0 0 4px 4px;
+}
+
+.main-navbar .navbar-inner .nav a{
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.down-navbar {
+    margin-bottom: 0;
+}
+
+.down-navbar .navbar-inner {
+    min-height: 20px;
+}
+
+.down-navbar .pull-right .muted {
+    margin-left: 20px;
+}

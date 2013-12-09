@@ -3,15 +3,16 @@
 <html>
   <head>
     <title>{% block title %}avia35{% endblock %}</title>
-    <link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{STATIC_URL}}css/libs/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{STATIC_URL}}css/style.css" rel="stylesheet" media="screen">
     <meta charset="utf-8">
   </head>
   <body>
     <div class="container">
 
       <!-- Start top navbar -->
-      <div class="navbar navbar-inverse" style="margin-bottom: 0;">
-        <div class="navbar-inner" style="border-radius: 4px 4px 0 0;">
+      <div class="navbar navbar-inverse top-navbar">
+        <div class="navbar-inner">
           <a class="brand" href="#">Вологда, аэропорт</a>
           <div class="pull-right">
             <span class="brand">Справочная: +7(921) 123-45-67</span>
@@ -21,18 +22,18 @@
       <!-- End top navbar -->
 
       <!-- Start top slider -->
-      <div id="top-slider" class="carousel slide" style="margin-bottom: 0;">
+      <div id="top-slider" class="carousel slide top-slider">
         <!-- Carousel items -->
         <div class="carousel-inner">
           <div class="active item">
             <img src="{{STATIC_URL}}img/top-slider-1.jpg">
-            <div class="carousel-caption" style="padding: 5px; background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5); padding-left: 25px;">
+            <div class="carousel-caption top-carousel-caption">
                 <p>Откройте для себя новые горизонты с Вологодким аэропортом</p>
             </div>
           </div>
           <div class="item">
             <img src="{{STATIC_URL}}img/top-slider-2.jpg">
-            <div class="carousel-caption" style="padding: 5px; background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);  padding-left: 25px;">
+            <div class="carousel-caption top-carousel-caption">
                 <p>Мы доставим Вас в пункт назначения со сверхзвуковой скоростью</p>
             </div>
           </div>
@@ -44,12 +45,10 @@
       <!-- End top slider -->
 
       <!-- Start main navbar -->
-      <div class="navbar">
-        <div class="navbar-inner" style="border-radius: 0 0 4px 4px;">
+      <div class="navbar main-navbar">
+        <div class="navbar-inner">
           <ul class="nav">
-            <li class="active">
-              <a href="#" style="padding-left: 10px; padding-right: 10px;">На главную</a>
-            </li>
+            <li class="active"><a href="#">На главную</a></li>
             <li><a href="#">Расписание</a></li>
             <li><a href="#">Услуги</a></li>
             <li><a href="#">Новости</a></li>
@@ -70,11 +69,11 @@
       <!-- End main content -->
 
       <!-- Start down navbar -->
-      <div class="navbar navbar-inverse" style="margin-bottom: 0;">
-        <div class="navbar-inner" style="min-height: 20px;">
+      <div class="navbar navbar-inverse down-navbar">
+        <div class="navbar-inner">
           <span class="muted">ОАО Вологодское авиационное предприятие</span>
           <div class="pull-right">
-            <span class="muted" style="margin-right: 20px;">приемная: 8(817) 55-36-00</span>
+            <span class="muted">приемная: 8(817) 55-36-00</span>
             <span class="muted">факс: 8(817) 55-36-01</span>
           </div>
         </div>
