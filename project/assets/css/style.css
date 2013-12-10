@@ -71,3 +71,22 @@
 .park-thumbnails {
     min-height: 350px;
 }
+
+.park-inner-title {
+    font: 25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding-left: 10px;
+}
+
+.park-inner-description {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.job-modal textarea {
+    width: 501px;
+    height: 95px;
+}
+
+.job-modal form{
+    margin: 0;
+}
