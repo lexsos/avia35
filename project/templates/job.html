@@ -7,9 +7,9 @@
 
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-job" href="#collapse1">Борт механик</a>
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-job" href="#job1">Борт механик</a>
     </div>
-    <div id="collapse1" class="accordion-body collapse">
+    <div id="job1" class="accordion-body collapse">
       <div class="accordion-inner">
         Требуется борт механик на вертолет Ми-8
         <dl>
@@ -22,18 +22,18 @@
           <dt>Контакты</dt>
           <dd>Специалист ОУП тел. 55-36-00</dd>
         </dl>
-        <a class="btn" href="#JobModal" data-toggle="modal">Откликнутся на вакансию</a>
+        <a class="btn" href="#JobModal" data-toggle="modal" job-name="Борт механик">Откликнутся на вакансию</a>
       </div>
     </div>
   </div>
 
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-job" href="#collapse2">Борт механик</a>
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-job" href="#job2">Первый пилот</a>
     </div>
-    <div id="collapse2" class="accordion-body collapse">
+    <div id="job2" class="accordion-body collapse">
       <div class="accordion-inner">
-      Требуется борт механик на вертолет Ми-8
+      Требуется первый пилот на вертолет Ми-8
       <dl>
         <dt>Требования</dt>
         <dd>Высшее образование, опыт работы не менее 2 лет.</dd>
@@ -44,29 +44,7 @@
         <dt>Контакты</dt>
         <dd>Специалист ОУП тел. 55-36-00</dd>
       </dl>
-      <a class="btn" href="#JobModal" data-toggle="modal">Откликнутся на вакансию</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-job" href="#collapse3">Борт механик</a>
-    </div>
-    <div id="collapse3" class="accordion-body collapse">
-      <div class="accordion-inner">
-      Требуется борт механик на вертолет Ми-8
-      <dl>
-        <dt>Требования</dt>
-        <dd>Высшее образование, опыт работы не менее 2 лет.</dd>
-        <dt>График роботы</dt>
-        <dd>Пятидневная рабочая неделя, с 8:00 до 17:00</dd>
-        <dt>Оплата</dt>
-        <dd>От 15т.р. до 20т.р. в зависимости от собеседования</dd>
-        <dt>Контакты</dt>
-        <dd>Специалист ОУП тел. 55-36-00</dd>
-      </dl>
-      <a class="btn" href="#JobModal" data-toggle="modal">Откликнутся на вакансию</a>
+      <a class="btn" href="#JobModal" data-toggle="modal" job-name="Первый пилот">Откликнутся на вакансию</a>
       </div>
     </div>
   </div>
@@ -78,11 +56,11 @@
   <form action="" method="post" enctype="multipart/form-data">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h3>Вакансия "Борт механик"</h3>
+      <h3>Вакансия "<span class="job-name"></span>"</h3>
     </div>
     <div class="modal-body">
       <label>ФИО</label>
-      <input type="text" placeholder="Ваше имя и фамилия">
+      <input type="text" placeholder="Ваше имя, фамилия и отчество" class="input-xlarge">
       <label>Телефон</label>
       <input type="text" placeholder="Ваш контактный телефон">
       <label>О себе</label>
