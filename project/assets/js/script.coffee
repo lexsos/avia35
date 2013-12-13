@@ -9,3 +9,6 @@ $(document).ready =>
 
     $('#accordion-job .btn').click ->
         $('#JobModal .job-name').html $(this).attr('job-name')
+
+    $('.schedule-table .btn').click ->
+        $('#OrderModal .order-name').html $(this).attr('order-name')

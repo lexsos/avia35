@@ -94,3 +94,16 @@
 .service-photo {
     margin-top: 10px;
 }
+
+.modal-order {
+    width: 650px;
+    margin-left: -350px;
+}
+
+.modal-order .thumbnail{
+    min-height: 100px
+}
+
+.modal-order .thumbnail .caption{
+    text-align: center;
+}
