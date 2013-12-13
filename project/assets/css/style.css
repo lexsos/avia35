@@ -107,3 +107,10 @@
 .modal-order .thumbnail .caption{
     text-align: center;
 }
+
+.page-title {
+    color: #999999;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-family: Helvetica,​Arial,​sans-serif;
+}
