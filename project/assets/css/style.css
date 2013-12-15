@@ -61,7 +61,7 @@
 
 .news-img-inner {
     float:left;
-    padding: 0px 25px 25px 0px ;
+    margin: 0px 25px 25px 0px ;
 }
 
 .news-date-inner {
@@ -91,13 +91,13 @@
 
 .park-inner-title {
     font: 25px "Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding-left: 10px;
+    margin-left: 10px;
     color: #999999;
 }
 
 .park-inner-description {
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .job-modal textarea {
