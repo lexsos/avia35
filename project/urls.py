@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^job/', include('job.urls')),
     url(r'^contacts/', include('contacts.urls')),
     url(r'^documents/', include('documents.urls')),
+    url(r'^avia_park/', include('avia_park.urls')),
 )
 
 if settings.DEBUG:

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block park_active %}active{% endblock %}
+
+
+{% block main_content %}
+
+  <ul class="thumbnails">
+    <li class="span6">
+      <div class="thumbnail">
+        <span class="park-inner-title">{{ object.title }}</span>
+        <img alt="" src="{{ object.get_first_image|thumbnail_url:'craft_detail' }}" id="main-img-galery">
+        <br>
+        <p class="park-inner-description">{{ object.description }}</p>
+      </div>
+    </li>
+    {% for item in object.get_images %}
+      <li class="span2">
+        <a class="thumbnail inner-galery" href="#" img-url="{{ item.image|thumbnail_url:'craft_detail' }}">
+          <img alt="" src="{{ item.image|thumbnail_url:'craft_detail_galery' }}">
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

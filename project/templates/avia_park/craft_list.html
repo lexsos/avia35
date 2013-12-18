@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block park_active %}active{% endblock %}
+
+
+{% block main_content %}
+
+  <div class="page-title">
+    <span>Авиапарк</span>
+  </div>
+
+  <ul class="thumbnails">
+    {% for craft in object_list %}
+      <li class="span4">
+        <div class="thumbnail park-thumbnails">
+          <img src="{{ craft.image|thumbnail_url:'craft_list' }}" alt="{{ craft.title }}">
+          <h3><a href="{% url 'avia_park_detail' craft.pk %}">{{ craft.title }}</a></h3>
+          <p>{{ craft.description }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
