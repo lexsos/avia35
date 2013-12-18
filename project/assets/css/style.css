@@ -61,25 +61,43 @@
 
 .news-img-inner {
     float:left;
-    padding: 25px  25px 25px 25px ;
+    margin: 0px 25px 25px 0px ;
 }
 
 .news-date-inner {
     text-align: right;
 }
 
+.news-title {
+    color: #999999;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-family: Helvetica,​Arial,​sans-serif;
+    line-height: 1.5;
+}
+
 .park-thumbnails {
     min-height: 350px;
 }
 
+.park-thumbnails p {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.park-thumbnails h3 {
+    margin-left: 5px;
+}
+
 .park-inner-title {
     font: 25px "Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding-left: 10px;
+    margin-left: 10px;
+    color: #999999;
 }
 
 .park-inner-description {
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .job-modal textarea {
@@ -106,4 +124,11 @@
 
 .modal-order .thumbnail .caption{
     text-align: center;
+}
+
+.page-title {
+    color: #999999;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-family: Helvetica,​Arial,​sans-serif;
 }
