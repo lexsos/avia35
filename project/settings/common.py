@@ -99,6 +99,7 @@ PROJECT_APPS = (
     'contacts',
     'documents',
     'avia_park',
+    'news',
 )
 
 INSTALLED_APPS = (
@@ -169,5 +170,7 @@ THUMBNAIL_ALIASES = {
         'craft_list': {'size': (290, 193), 'crop': True},
         'craft_detail': {'size': (440, 300), 'crop': True},
         'craft_detail_galery': {'size': (130, 88), 'crop': True},
+        'news_list': {'size': (300, 200), 'crop': True},
+        'news_detail': {'size': (450, 300), 'crop': True},
     },
 }

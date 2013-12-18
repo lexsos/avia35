@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block news_active %}active{% endblock %}
+
+
+{% block main_content %}
+
+<div class="row">
+
+  <div class="span12">
+    <div class="news-title">
+      <span>{{ news.title }}</span>
+    </div>
+  </div>
+
+  <div class="span12">
+    <div class="news-img-inner">
+      <img src="{{ news.image|thumbnail_url:'news_detail' }}" alt="">
+    </div>
+    <div class="news-text-inner">
+      {{ news.get_content | safe }}
+    </div>
+    <div class="news-date-inner">{{ news.pub_date_start|date:"d.m.o" }}</div>
+  </div>
+
+</div>
+
+{% endblock %}
