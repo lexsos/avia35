@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^tmpl/(.*)$', 'django.shortcuts.render'),
 
     url(r'^job/', include('job.urls')),
+    url(r'^contacts/', include('contacts.urls')),
 )
 
 if settings.DEBUG:

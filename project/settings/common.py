@@ -96,6 +96,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 PROJECT_APPS = (
     'slider',
     'job',
+    'contacts',
 )
 
 INSTALLED_APPS = (

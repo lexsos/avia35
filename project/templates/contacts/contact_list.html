@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block contacts_active %}active{% endblock %}
+
+
+{% block main_content %}
+
+  <div class="page-title">
+    <span>Контакты</span>
+  </div>
+
+  {% for contact in object_list %}
+    <address>
+      <strong>{{ contact.title }}</strong>
+      {{ contact.content | safe }}
+    </address>
+  {% endfor %}
+
+{% endblock %}
