@@ -23,6 +23,9 @@ class Slide(models.Model):
         help_text=_('if set, then slide will show'),
     )
 
+    def __unicode__(self):
+        return self.title
+
     class Meta:
         ordering = ['-weight']
         verbose_name_plural = _('slides')

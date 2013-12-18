@@ -29,9 +29,9 @@
       <div class="navbar main-navbar">
         <div class="navbar-inner">
           <ul class="nav">
-            <li class="active"><a href="#">На главную</a></li>
-            <li><a href="#">Расписание</a></li>
-            <li class="dropdown">
+            <li class="{% block index_active %}{% endblock %}"><a href="#">На главную</a></li>
+            <li class="{% block schedule_active %}{% endblock %}"><a href="#">Расписание</a></li>
+            <li class="dropdown {% block services_active %}{% endblock %}">
               <a href="#" data-toggle="dropdown" class="dropdown-toggle">Услуги <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Пассажирам</a></li>
@@ -39,11 +39,11 @@
                 <li><a href="#">Аэродромные услуги</a></li>
               </ul>
             </li>
-            <li><a href="#">Новости</a></li>
-            <li><a href="#">Документы</a></li>
-            <li><a href="#">Авиапарк</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Вакансии</a></li>
+            <li class="{% block news_active %}{% endblock %}"><a href="#">Новости</a></li>
+            <li class="{% block documents_active %}{% endblock %}"><a href="#">Документы</a></li>
+            <li class="{% block park_active %}{% endblock %}"><a href="#">Авиапарк</a></li>
+            <li class="{% block contacts_active %}{% endblock %}"><a href="#">Контакты</a></li>
+            <li class="{% block job_active %}{% endblock %}"><a href="{% url 'job_list' %}">Вакансии</a></li>
           </ul>
         </div>
       </div>
