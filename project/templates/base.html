@@ -40,7 +40,7 @@
               </ul>
             </li>
             <li class="{% block news_active %}{% endblock %}"><a href="#">Новости</a></li>
-            <li class="{% block documents_active %}{% endblock %}"><a href="#">Документы</a></li>
+            <li class="{% block documents_active %}{% endblock %}"><a href="{% url 'document_list' %}">Документы</a></li>
             <li class="{% block park_active %}{% endblock %}"><a href="#">Авиапарк</a></li>
             <li class="{% block contacts_active %}{% endblock %}"><a href="{% url 'contact_list' %}">Контакты</a></li>
             <li class="{% block job_active %}{% endblock %}"><a href="{% url 'job_list' %}">Вакансии</a></li>

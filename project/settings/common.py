@@ -97,6 +97,7 @@ PROJECT_APPS = (
     'slider',
     'job',
     'contacts',
+    'documents',
 )
 
 INSTALLED_APPS = (

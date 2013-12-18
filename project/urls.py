@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     url(r'^job/', include('job.urls')),
     url(r'^contacts/', include('contacts.urls')),
+    url(r'^documents/', include('documents.urls')),
 )
 
 if settings.DEBUG:

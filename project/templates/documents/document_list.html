@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block documents_active %}active{% endblock %}
+
+
+{% block main_content %}
+
+  <div class="page-title">
+    <span>Документы</span>
+  </div>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Тип</th>
+        <th>Название</th>
+        <th>Размер</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for document in object_list %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td><span class="label doc-type" rel="popover" data-content="{{ document.doc_type.description }}" data-original-title="{{ document.doc_type.title }}">{{ document.doc_type.title }}</span></td>
+          <td><a href="{{ document.document.url }}">{{ document.title }}</a></td>
+          <td>{{ document.get_size_text }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
