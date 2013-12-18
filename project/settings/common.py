@@ -94,7 +94,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 PROJECT_APPS = (
-
+    'slider',
 )
 
 INSTALLED_APPS = (
@@ -157,4 +157,10 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme': "advanced",
     'plugins': "spellchecker",
     'theme_advanced_buttons3_add': "|,spellchecker",
+}
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'slider': {'size': (940, 220), 'crop': True},
+    },
 }

@@ -1,0 +1,17 @@
+{% load thumbnail %}
+<div id="top-slider" class="carousel slide top-slider">
+  <!-- Carousel items-->
+  <div class="carousel-inner">
+    {% for slide in slides %}
+    <div class="item{% if slide.pk == first_pk %} active{% endif %}">
+      <img src="{{ slide.image|thumbnail_url:'slider' }}">
+      <div class="carousel-caption top-carousel-caption">
+        {{ slide.title | safe }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#top-slider" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#top-slider" data-slide="next">&rsaquo;</a>
+</div>
