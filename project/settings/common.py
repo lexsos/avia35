@@ -101,6 +101,7 @@ PROJECT_APPS = (
     'avia_park',
     'news',
     'core',
+    'schedule',
 )
 
 INSTALLED_APPS = (
@@ -173,5 +174,6 @@ THUMBNAIL_ALIASES = {
         'craft_detail_galery': {'size': (130, 88), 'crop': True},
         'news_list': {'size': (300, 200), 'crop': True},
         'news_detail': {'size': (450, 300), 'crop': True},
+        'agent_logo': {'size': (130, 50), 'crop': True},
     },
 }

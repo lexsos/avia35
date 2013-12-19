@@ -11,4 +11,5 @@ $(document).ready =>
         $('#JobModal .job-name').html $(this).attr('job-name')
 
     $('.schedule-table .btn').click ->
+        $('#OrderModal .modal-body').load $(this).attr('agents')
         $('#OrderModal .order-name').html $(this).attr('order-name')

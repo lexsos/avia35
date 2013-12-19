@@ -1,0 +1,14 @@
+{% load thumbnail %}
+
+<ul class="thumbnails">
+  {% for agent in flight.agents.all %}
+    <li class="span2">
+      <div class="thumbnail">
+        <div class="caption"><p><a href="{{ agent.url }}">{{ agent.title }}</a></p></div>
+        {% if agent.image %}
+          <a href="{{ agent.url }}"><img src="{{ agent.image|thumbnail_url:'agent_logo' }}" alt=""></a>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

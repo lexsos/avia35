@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^documents/', include('documents.urls')),
     url(r'^avia_park/', include('avia_park.urls')),
     url(r'^news/', include('news.urls')),
+    url(r'^schedule/', include('schedule.urls')),
 
     url(r'^$',
         TemplateView.as_view(template_name='index.html'),
