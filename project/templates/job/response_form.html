@@ -1,0 +1,39 @@
+<form action="{% url 'job_add_response' vacancy.pk %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4>Вакансия "{{ vacancy.title }}"</h4>
+    </div>
+    <div class="modal-body">
+
+      <label>ФИО</label>
+      <input type="text" placeholder="Ваше имя, фамилия и отчество" class="input-xlarge" id="{{ form.fio.id_for_label }}" name="{{ form.fio.name }}">
+      {% if form.fio.errors %}
+        {{ form.fio.errors }}
+      {% endif %}
+
+      <label>Телефон</label>
+      <input type="text" placeholder="Ваш контактный телефон" id="{{ form.phone.id_for_label }}" name="{{ form.phone.name }}">
+      {% if form.phone.errors %}
+        {{ form.phone.errors }}
+      {% endif %}
+
+
+      <label>О себе</label>
+      <textarea placeholder="Расскажите коротко о себе" id="{{ form.about_self.id_for_label }}" name="{{ form.about_self.name }}"></textarea>
+      {% if form.about_self.errors %}
+        {{ form.about_self.errors }}
+      {% endif %}
+
+
+      <label class="control-label">Прикрепить резюме</label>
+      <input type="file" id="{{ form.summary.id_for_label }}" name="{{ form.summary.name }}" />
+      {% if form.summary.errors %}
+        {{ form.summary.errors }}
+      {% endif %}
+
+
+    </div>
+    <div class="modal-footer"> <button type="submit" class="btn btn-primary">Откликнутся</button> </div>
+</form>
+</body>
