@@ -100,6 +100,7 @@ PROJECT_APPS = (
     'documents',
     'avia_park',
     'news',
+    'core',
 )
 
 INSTALLED_APPS = (
