@@ -103,6 +103,7 @@ PROJECT_APPS = (
     'core',
     'schedule',
     'services',
+    'main_page',
 )
 
 INSTALLED_APPS = (

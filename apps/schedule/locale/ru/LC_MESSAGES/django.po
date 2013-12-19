@@ -37,7 +37,7 @@ msgstr "логотип"
 
 #: models.py:24
 msgid "agents items"
-msgstr "агнты"
+msgstr "агенты"
 
 #: models.py:25
 msgid "agent item"
