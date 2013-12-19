@@ -23,7 +23,7 @@
     <tbody>
       {% for flight in flight_list %}
         <tr>
-          <td>{{forloop.counter}}</td>
+          <td>{{ forloop.counter }}</td>
           <td>{{ flight.direction }}</td>
           <td>{{ flight.departure | safe }}</td>
           <td>{{ flight.arrival | safe }}</td>

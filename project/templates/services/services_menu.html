@@ -1,0 +1,5 @@
+<ul class="dropdown-menu">
+  {% for service_type in service_types %}
+    <li><a href="{% url 'services_list' service_type.slug %}">{{ service_type.title }}</a></li>
+  {% endfor %}
+</ul>

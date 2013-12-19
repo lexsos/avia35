@@ -102,6 +102,7 @@ PROJECT_APPS = (
     'news',
     'core',
     'schedule',
+    'services',
 )
 
 INSTALLED_APPS = (
@@ -175,5 +176,6 @@ THUMBNAIL_ALIASES = {
         'news_list': {'size': (300, 200), 'crop': True},
         'news_detail': {'size': (450, 300), 'crop': True},
         'agent_logo': {'size': (130, 50), 'crop': True},
+        'service': {'size': (220, 140), 'crop': True},
     },
 }

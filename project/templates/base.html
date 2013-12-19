@@ -1,4 +1,4 @@
-{% load coffeescript slider %}
+{% load coffeescript slider services %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -33,11 +33,7 @@
             <li class="{% block schedule_active %}{% endblock %}"><a href="{% url 'schedule_list' %}">Расписание</a></li>
             <li class="dropdown {% block services_active %}{% endblock %}">
               <a href="#" data-toggle="dropdown" class="dropdown-toggle">Услуги <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Пассажирам</a></li>
-                <li><a href="#">Авиакомпаниям</a></li>
-                <li><a href="#">Аэродромные услуги</a></li>
-              </ul>
+              {% services_menu %}
             </li>
             <li class="{% block news_active %}{% endblock %}"><a href="{% url 'news_list' %}">Новости</a></li>
             <li class="{% block documents_active %}{% endblock %}"><a href="{% url 'document_list' %}">Документы</a></li>

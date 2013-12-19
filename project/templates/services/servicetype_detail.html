@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block services_active %}active{% endblock %}
+
+
+{% block main_content %}
+
+  <div class="page-title">
+    <span>{{ servicetype.title }}</span>
+  </div>
+
+  <div class="accordion" id="accordion-services">
+    {% for service in servicetype.service_set.published %}
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-services" href="#services{{ service.pk }}">
+            {{ service.title }}
+          </a>
+        </div>
+        <div id="services{{ service.pk }}" class="accordion-body collapse{% if forloop.counter == 1 %} in{% endif %}">
+          <div class="accordion-inner">
+            {{ service.description }}
+            <ul class="thumbnails service-photo">
+              {% for image in service.serviceimage_set.all %}
+                <li class="span3"><img src="{{ image.image|thumbnail_url:'service' }}" alt=""></li>
+              {% endfor %}
+            </ul>
+            <dl>
+              {% for parametr in service.serviceparametr_set.all %}
+                <dt>{{ parametr.title }}</dt>
+                <dd>{{ parametr.content }}</dd>
+              {% endfor %}
+            </dl>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}
