@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 
 from .forms import ResponseForm
 from .models import Vacancy
+from .utils import send_response_notice
 
 
 class AddResponse(FormView):
@@ -20,6 +21,7 @@ class AddResponse(FormView):
         instance = form.save(commit=False)
         instance.vacancy = self.vacancy
         instance.save()
+        send_response_notice(instance)
         return super(AddResponse, self).form_valid(form)
 
     def get_success_url(self):

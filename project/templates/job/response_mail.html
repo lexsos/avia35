@@ -1,0 +1,7 @@
+Новый отклик на вакансию "{{ response.vacancy }}"
+
+Дата: {{ response.create_date }}
+ФИО: {{ response.fio }}
+Телефон: {{ response.phone }}
+{% if response.summary %}Резюме: http://{{ domain }}{{ response.summary.url }}{% endif %}
+{% if response.about_self %}О себе: {{ response.about_self }}{% endif %}

@@ -180,3 +180,10 @@ THUMBNAIL_ALIASES = {
         'service': {'size': (220, 140), 'crop': True},
     },
 }
+
+EMAIL_HOST = 'ns2.avia35.ru'
+EMAIL_PORT = '25'
+
+JOB_CONFIG = {
+    'NOTICE_TO': ('alexander@avia35.ru', )
+}

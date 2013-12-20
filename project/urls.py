@@ -10,7 +10,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^tmpl/(.*)$', 'django.shortcuts.render'),
 
     url(r'^job/', include('job.urls')),
     url(r'^contacts/', include('contacts.urls')),
