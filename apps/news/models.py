@@ -13,11 +13,11 @@ class News(Publication):
     )
     content = models.TextField(
         verbose_name=_('news content'),
-        blank = True,
+        blank=True,
     )
     image = models.ImageField(
         verbose_name=_('news image'),
-        upload_to = 'news',
+        upload_to='news',
     )
 
     def get_content(self):

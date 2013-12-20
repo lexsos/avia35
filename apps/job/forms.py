@@ -4,7 +4,6 @@ from django.utils.translation import ugettext_lazy as _
 from .models import VacancyResponse
 
 
-
 class ResponseForm(forms.ModelForm):
 
     fio = forms.CharField(

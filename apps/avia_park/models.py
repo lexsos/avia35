@@ -10,11 +10,11 @@ class Craft(Publication):
     )
     description = models.TextField(
         verbose_name=_('craft description'),
-        blank = True,
+        blank=True,
     )
     image = models.ImageField(
         verbose_name=_('craft image'),
-        upload_to = 'avia_park',
+        upload_to='avia_park',
     )
     slug = models.CharField(
         verbose_name=_('craft slug'),
@@ -48,7 +48,7 @@ class CraftImage(models.Model):
     )
     image = models.ImageField(
         verbose_name=_('craft image'),
-        upload_to = 'avia_park',
+        upload_to='avia_park',
     )
 
     def __unicode__(self):

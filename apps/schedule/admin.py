@@ -10,14 +10,18 @@ class FlightAdmin(AdminTinymceMixin, PublicationAdmin):
     list_filter = ('weight', 'enabled')
     list_display = ('direction', 'weight', 'enabled')
 
-    fieldsets =  (
+    fieldsets = (
         (_('Flight parameters'), {
-            'classes': ('wide',),
-            'fields': ('direction',
-                       'departure',
-                       'arrival',
-                       'order',
-                       'agents',)
+            'classes': (
+                'wide',
+            ),
+            'fields': (
+                'direction',
+                'departure',
+                'arrival',
+                'order',
+                'agents',
+            ),
         }),
     ) + PublicationAdmin.fieldsets
 

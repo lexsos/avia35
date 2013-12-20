@@ -35,7 +35,7 @@ class Service(Publication):
     )
     description = models.TextField(
         verbose_name=_('service description'),
-        blank = True,
+        blank=True,
     )
 
     def __unicode__(self):
@@ -80,7 +80,7 @@ class ServiceImage(models.Model):
     )
     image = models.ImageField(
         verbose_name=_('service image'),
-        upload_to = 'services',
+        upload_to='services',
     )
 
     def __unicode__(self):

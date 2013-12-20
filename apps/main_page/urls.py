@@ -5,6 +5,9 @@ from .models import Content
 
 
 urlpatterns = patterns('',
-    url(r'^$', PublicationListView.as_view(model=Content), name='main_page'),
+    url(
+        r'^$',
+        PublicationListView.as_view(model=Content),
+        name='main_page',
+    ),
 )
-

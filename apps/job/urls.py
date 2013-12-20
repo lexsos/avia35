@@ -7,9 +7,18 @@ from .views import AddResponse
 
 
 urlpatterns = patterns('',
-    url(r'^$', PublicationListView.as_view(model=Vacancy), name='job_list'),
-    url(r'^(?P<pk>\d+)/$', AddResponse.as_view(), name='job_add_response'),
-    url(r'^success/$',
+    url(
+        r'^$',
+        PublicationListView.as_view(model=Vacancy),
+        name='job_list',
+    ),
+    url(
+        r'^(?P<pk>\d+)/$',
+        AddResponse.as_view(),
+        name='job_add_response',
+    ),
+    url(
+        r'^success/$',
         TemplateView.as_view(template_name="job/response_success.html"),
         name='job_response_success',
     ),

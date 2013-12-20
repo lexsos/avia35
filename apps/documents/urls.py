@@ -5,6 +5,9 @@ from .models import Document
 
 
 urlpatterns = patterns('',
-    url(r'^$', PublicationListView.as_view(model=Document), name='document_list'),
+    url(
+        r'^$',
+        PublicationListView.as_view(model=Document),
+        name='document_list',
+    ),
 )
-

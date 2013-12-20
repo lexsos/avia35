@@ -5,9 +5,9 @@ from .models import ServiceType
 
 
 urlpatterns = patterns('',
-        url(r'^(?P<slug>[-_\w]+)/$',
+    url(
+        r'^(?P<slug>[-_\w]+)/$',
         PublicationDetailView.as_view(model=ServiceType),
         name='services_list',
     ),
 )
-

@@ -5,6 +5,9 @@ from .models import Contact
 
 
 urlpatterns = patterns('',
-    url(r'^$', PublicationListView.as_view(model=Contact), name='contact_list'),
+    url(
+        r'^$',
+        PublicationListView.as_view(model=Contact),
+        name='contact_list',
+    ),
 )
-

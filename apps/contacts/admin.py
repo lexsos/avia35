@@ -10,12 +10,14 @@ class ContactAdmin(AdminTinymceMixin, PublicationAdmin):
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'weight', 'enabled')
 
-    fieldsets =  (
-        (_('Contact parameters'), {
-            'classes': ('wide',),
-            'fields': ('title',
-                       'content',)
-        }),
+    fieldsets = (
+        (
+            _('Contact parameters'),
+            {
+                'classes': ('wide',),
+                'fields': ('title', 'content')
+            }
+        ),
     ) + PublicationAdmin.fieldsets
 
     rich_fields = ('content',)

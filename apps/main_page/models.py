@@ -10,11 +10,11 @@ class Content(Publication):
     )
     content_rich = models.TextField(
         verbose_name=_('content content rich'),
-        blank = True,
+        blank=True,
     )
     content_plane = models.TextField(
         verbose_name=_('content content plane'),
-        blank = True,
+        blank=True,
     )
 
     def __unicode__(self):

@@ -34,6 +34,6 @@ def intellipages(value, arg=None):
 
 @register.simple_tag
 def url_get(**kwargs):
-    get_paprams = dict([ [name, kwargs[name] ] for name in kwargs if kwargs[name] ])
+    get_paprams = dict([[name, kwargs[name]] for name in kwargs if kwargs[name]])
     get_str = urlencode(get_paprams)
     return '?{}'.format(get_str)

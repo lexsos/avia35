@@ -9,12 +9,14 @@ class ServiceTypeAdmin(PublicationAdmin):
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'slug', 'weight', 'enabled')
 
-    fieldsets =  (
-        (_('Service type parameters'), {
-            'classes': ('wide',),
-            'fields': ('title',
-                       'slug')
-        }),
+    fieldsets = (
+        (
+            _('Service type parameters'),
+            {
+                'classes': ('wide',),
+                'fields': ('title', 'slug'),
+            }
+        ),
     ) + PublicationAdmin.fieldsets
 
 
@@ -22,24 +24,28 @@ class ServiceParametrInline(admin.StackedInline):
     model = ServiceParametr
     extra = 5
 
+
 class ServiceImageInline(admin.StackedInline):
     model = ServiceImage
     extra = 3
+
 
 class ServiceAdmin(PublicationAdmin):
     list_filter = ('service_type', 'weight', 'enabled')
     list_display = ('title', 'service_type', 'weight', 'enabled')
 
-    fieldsets =  (
-        (_('Service parameters'), {
-            'classes': ('wide',),
-            'fields': ('service_type',
-                       'title',
-                       'description')
-        }),
+    fieldsets = (
+        (
+            _('Service parameters'),
+            {
+                'classes': ('wide',),
+                'fields': ('service_type', 'title', 'description')
+            }
+        ),
     ) + PublicationAdmin.fieldsets
 
     inlines = [ServiceParametrInline, ServiceImageInline]
+
 
 class ServiceParametrAdmin(admin.ModelAdmin):
     list_display = ('title', 'service')
@@ -47,6 +53,7 @@ class ServiceParametrAdmin(admin.ModelAdmin):
 
 class ServiceImageAdmin(admin.ModelAdmin):
     list_display = ('title', 'service')
+
 
 admin.site.register(ServiceType, ServiceTypeAdmin)
 admin.site.register(Service, ServiceAdmin)

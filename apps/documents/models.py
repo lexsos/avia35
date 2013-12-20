@@ -33,7 +33,7 @@ class Document(Publication):
         max_length=255,
     )
     document = models.FileField(
-        upload_to = 'documents',
+        upload_to='documents',
         verbose_name=_('document file'),
     )
 

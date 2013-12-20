@@ -12,7 +12,7 @@ class Agent(models.Model):
     url = models.URLField(verbose_name=_('agent url'))
     image = models.ImageField(
         verbose_name=_('agent logo'),
-        upload_to = 'schedule',
+        upload_to='schedule',
         blank=True,
         null=True,
     )
@@ -39,11 +39,12 @@ class Flight(Publication):
     )
     order = models.TextField(
         verbose_name=_('flight order'),
-        blank = True,
+        blank=True,
     )
-    agents = models.ManyToManyField(Agent,
+    agents = models.ManyToManyField(
+        Agent,
         verbose_name=_('flight agents'),
-         blank=True,
+        blank=True,
     )
 
     def __unicode__(self):

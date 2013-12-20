@@ -9,16 +9,21 @@ class VacancyAdmin(PublicationAdmin):
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'weight', 'enabled')
 
-    fieldsets =  (
-        (_('Vacancy parameters'), {
-            'classes': ('wide',),
-            'fields': ('title',
-                       'description',
-                       'requirements',
-                       'schedule',
-                       'payment',
-                       'contacts',)
-        }),
+    fieldsets = (
+        (
+            _('Vacancy parameters'),
+            {
+                'classes': ('wide',),
+                'fields': (
+                    'title',
+                    'description',
+                    'requirements',
+                    'schedule',
+                    'payment',
+                    'contacts',
+                )
+            }
+        ),
     ) + PublicationAdmin.fieldsets
 
 

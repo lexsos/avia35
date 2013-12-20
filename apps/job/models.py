@@ -10,26 +10,26 @@ class Vacancy(Publication):
     )
     description = models.TextField(
         verbose_name=_('vacancy description'),
-        blank = True,
+        blank=True,
     )
     requirements = models.TextField(
         verbose_name=_('vacancy requirements'),
-        blank = True,
+        blank=True,
     )
     schedule = models.CharField(
         verbose_name=_('vacancy schedule'),
         max_length=255,
-        blank = True,
+        blank=True,
     )
     payment = models.CharField(
         verbose_name=_('vacancy payment'),
         max_length=255,
-        blank = True,
+        blank=True,
     )
     contacts = models.CharField(
         verbose_name=_('vacancy contacts'),
         max_length=255,
-        blank = True,
+        blank=True,
     )
 
     def __unicode__(self):
@@ -57,12 +57,12 @@ class VacancyResponse(models.Model):
     )
     about_self = models.TextField(
         verbose_name=_('vacancy description'),
-        blank = True,
+        blank=True,
     )
     summary = models.FileField(
-        upload_to = 'job',
+        upload_to='job',
         verbose_name=_('response summary'),
-        blank = True,
+        blank=True,
     )
     create_date = models.DateTimeField(
         auto_now=True,

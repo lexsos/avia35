@@ -10,7 +10,7 @@ class Slide(models.Model):
     image = models.ImageField(
         verbose_name=_('slide image'),
         help_text=_('image of slide'),
-        upload_to = 'slider',
+        upload_to='slider',
     )
     weight = models.IntegerField(
         verbose_name=_('weight'),

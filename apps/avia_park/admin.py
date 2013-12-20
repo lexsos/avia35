@@ -9,11 +9,14 @@ class CraftAdmin(PublicationAdmin):
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'slug', 'weight', 'enabled')
 
-    fieldsets =  (
-        (_('Craft parameters'), {
-            'classes': ('wide',),
-            'fields': ('title', 'description', 'image', 'slug')
-        }),
+    fieldsets = (
+        (
+            _('Craft parameters'),
+            {
+                'classes': ('wide',),
+                'fields': ('title', 'description', 'image', 'slug')
+            }
+        ),
     ) + PublicationAdmin.fieldsets
 
 

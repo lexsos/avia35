@@ -11,13 +11,18 @@ class ContentAdmin(AdminTinymceMixin, PublicationAdmin):
     list_display = ('title', 'weight', 'enabled')
     rich_fields = ('content_rich',)
 
-    fieldsets =  (
-        (_('Content parameters'), {
-            'classes': ('wide',),
-            'fields': ('title',
-                       'content_rich',
-                       'content_plane')
-        }),
+    fieldsets = (
+        (
+            _('Content parameters'),
+            {
+                'classes': ('wide',),
+                'fields': (
+                    'title',
+                    'content_rich',
+                    'content_plane',
+                )
+            }
+        ),
     ) + PublicationAdmin.fieldsets
 
 
