@@ -16,6 +16,12 @@ class Craft(Publication):
         verbose_name=_('craft image'),
         upload_to = 'avia_park',
     )
+    slug = models.CharField(
+        verbose_name=_('craft slug'),
+        max_length=255,
+        unique=True,
+    )
+
     def __unicode__(self):
         return self.title
 
