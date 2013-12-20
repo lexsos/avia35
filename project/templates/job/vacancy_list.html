@@ -25,7 +25,7 @@
               {% if vacancy.payment %}<dt>Оплата</dt><dd>{{vacancy.payment}}</dd>{% endif %}
               {% if vacancy.contacts %}<dt>Контакты</dt><dd>{{vacancy.contacts}}</dd>{% endif %}
             </dl>
-            <a class="btn" href="#JobModal" data-toggle="modal" job-name="{{vacancy.title}}" vacancy-pk="{{vacancy.pk}}">
+            <a class="btn" href="#JobModal" data-toggle="modal" form-url="{% url 'job_add_response' vacancy.pk %}">
               Откликнутся на вакансию
             </a>
           </div>
@@ -36,23 +36,6 @@
 
 
 <div class="modal hide fade job-modal" id="JobModal">
-  <form action="" method="post" enctype="multipart/form-data">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h4>Вакансия "<span class="job-name"></span>"</h4>
-    </div>
-    <div class="modal-body">
-      <label>ФИО</label>
-      <input type="text" placeholder="Ваше имя, фамилия и отчество" class="input-xlarge">
-      <label>Телефон</label>
-      <input type="text" placeholder="Ваш контактный телефон">
-      <label>О себе</label>
-      <textarea placeholder="Расскажите коротко о себе"></textarea>
-      <label class="control-label">Прикрепить резюме</label>
-      <input type="file" name="file"/>
-    </div>
-    <div class="modal-footer"> <button type="submit" class="btn btn-primary">Откликнутся</button> </div>
-  </form>
 </div>
 
 {% endblock %}

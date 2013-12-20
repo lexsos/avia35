@@ -132,3 +132,10 @@
     font-size: 24px;
     font-family: Helvetica,​Arial,​sans-serif;
 }
+
+.send-progress {
+    display: none;
+    left: 15px;
+    top: 15px;
+    position: absolute;
+}

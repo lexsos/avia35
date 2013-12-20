@@ -1,39 +1,43 @@
-<form action="{% url 'job_add_response' vacancy.pk %}" method="post" enctype="multipart/form-data">
+<form id="job_response_form" action="{% url 'job_add_response' vacancy.pk %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
+
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       <h4>Вакансия "{{ vacancy.title }}"</h4>
     </div>
+
     <div class="modal-body">
-
-      <label>ФИО</label>
-      <input type="text" placeholder="Ваше имя, фамилия и отчество" class="input-xlarge" id="{{ form.fio.id_for_label }}" name="{{ form.fio.name }}">
-      {% if form.fio.errors %}
-        {{ form.fio.errors }}
-      {% endif %}
-
-      <label>Телефон</label>
-      <input type="text" placeholder="Ваш контактный телефон" id="{{ form.phone.id_for_label }}" name="{{ form.phone.name }}">
-      {% if form.phone.errors %}
-        {{ form.phone.errors }}
-      {% endif %}
-
-
-      <label>О себе</label>
-      <textarea placeholder="Расскажите коротко о себе" id="{{ form.about_self.id_for_label }}" name="{{ form.about_self.name }}"></textarea>
-      {% if form.about_self.errors %}
-        {{ form.about_self.errors }}
-      {% endif %}
-
-
-      <label class="control-label">Прикрепить резюме</label>
-      <input type="file" id="{{ form.summary.id_for_label }}" name="{{ form.summary.name }}" />
-      {% if form.summary.errors %}
-        {{ form.summary.errors }}
-      {% endif %}
-
-
+      <div class="control-group{% if form.fio.errors %} error{% endif %}">
+        <label for="{{ form.fio.id_for_label }}">ФИО</label>
+        <div class="controls">
+          {{ form.fio }}
+          {% if form.fio.errors %}
+            <span class="help-inline">Укажите Ваше ФИО</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="control-group{% if form.phone.errors %} error{% endif %}">
+        <label for="{{ form.phone.id_for_label }}">Контактный телефон</label>
+        <div class="controls">
+          {{ form.phone }}
+          {% if form.phone.errors %}
+            <span class="help-inline">Укажите Ваше телефон</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="{{ form.about_self.id_for_label }}">О себе</label>
+        {{ form.about_self }}
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="{{ form.summary.id_for_label }}">Прикрепить резюме</label>
+        {{ form.summary }}
+      </div>
     </div>
-    <div class="modal-footer"> <button type="submit" class="btn btn-primary">Откликнутся</button> </div>
+
+    <div class="modal-footer" style="position: relative">
+      <img src="{{ STATIC_URL }}/img/progress.gif" class="send-progress">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      <button type="submit" class="btn btn-primary">Откликнутся</button>
+    </div>
 </form>
-</body>

@@ -7,9 +7,22 @@ $(document).ready =>
         img_url = $(this).attr 'img-url'
         $('#main-img-galery').attr 'src', img_url
 
-    $('#accordion-job .btn').click ->
-        $('#JobModal .job-name').html $(this).attr('job-name')
-
     $('.schedule-table .btn').click ->
         $('#OrderModal .modal-body').load $(this).attr('agents')
         $('#OrderModal .order-name').html $(this).attr('order-name')
+
+    $('#accordion-job .btn').click ->
+        form_url = $(this).attr('form-url')
+        $('#JobModal').load form_url, ->
+            set_ajax_job = ->
+                $('#job_response_form').ajaxForm
+                    success: (data) ->
+                        $('#JobModal').html data
+                        set_ajax_job()
+                    beforeSubmit: ->
+                        $('#job_response_form .send-progress').css('display', 'inline')
+                        true
+            set_ajax_job()
+
+
+
