@@ -22,7 +22,7 @@ class ServiceTypeAdmin(PublicationAdmin):
 
 class ServiceParametrInline(admin.StackedInline):
     model = ServiceParametr
-    extra = 5
+    extra = 3
 
 
 class ServiceImageInline(admin.StackedInline):
