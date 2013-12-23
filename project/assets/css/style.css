@@ -143,3 +143,7 @@
 .dropdown-menu .message {
     margin-left: 10px;
 }
+
+.table .file-size{
+    width: 80px;
+}
