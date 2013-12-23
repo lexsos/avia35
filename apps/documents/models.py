@@ -61,4 +61,4 @@ class Document(Publication):
     class Meta:
         verbose_name_plural = _('documents')
         verbose_name = _('document')
-        ordering = ['-weight', '-pub_date_start']
+        ordering = ['-weight', 'pub_date_start']
