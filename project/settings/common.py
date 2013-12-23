@@ -167,7 +167,7 @@ TINYMCE_DEFAULT_CONFIG = {
 
 THUMBNAIL_ALIASES = {
     '': {
-        'slider': {'size': (940, 220), 'crop': True},
+        'slider': {'size': (940, 320), 'crop': True},
         'craft_list': {'size': (290, 193), 'crop': True},
         'craft_detail': {'size': (440, 300), 'crop': True},
         'craft_detail_galery': {'size': (130, 88), 'crop': True},
