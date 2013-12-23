@@ -20,7 +20,7 @@ class ContactAdmin(AdminTinymceMixin, PublicationAdmin):
         ),
     ) + PublicationAdmin.fieldsets
 
-    rich_fields = ('content',)
+    #rich_fields = ('content',)
 
 
 admin.site.register(Contact, ContactAdmin)
