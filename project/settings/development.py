@@ -18,7 +18,6 @@ ALLOWED_HOSTS = INTERNAL_IPS
 
 INSTALLED_APPS += (
     'debug_toolbar',
-    'gunicorn',
 )
 
 MIDDLEWARE_CLASSES += (

@@ -16,3 +16,7 @@ DATABASES = {
         'PASSWORD': '123456',
     }
 }
+
+INSTALLED_APPS += (
+    'gunicorn',
+)
