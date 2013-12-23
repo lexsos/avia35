@@ -8,11 +8,11 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Новости</span>
+    <span>Новости {% if not news_list %}(пусто){% endif%}</span>
   </div>
 
   <ul class="thumbnails">
-    {% for news in object_list %}
+    {% for news in news_list %}
       <li class="span12">
         <div class="thumbnail">
           <div class="row">

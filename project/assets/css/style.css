@@ -139,3 +139,7 @@
     top: 15px;
     position: absolute;
 }
+
+.dropdown-menu .message {
+    margin-left: 10px;
+}

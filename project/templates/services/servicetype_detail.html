@@ -8,7 +8,7 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>{{ servicetype.title }}</span>
+    <span>{{ servicetype.title }} {% if not servicetype.service_set.published %}(пусто){% endif%}</span>
   </div>
 
   <div class="accordion" id="accordion-services">

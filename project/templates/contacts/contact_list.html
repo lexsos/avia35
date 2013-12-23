@@ -7,10 +7,10 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Контакты</span>
+    <span>Контакты {% if not contact_list %}(пусто){% endif%}</span>
   </div>
 
-  {% for contact in object_list %}
+  {% for contact in contact_list %}
     <address>
       <strong>{{ contact.title }}</strong>
       {{ contact.content | safe }}

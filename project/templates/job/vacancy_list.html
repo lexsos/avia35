@@ -7,11 +7,11 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Вакансии</span>
+    <span>Вакансии {% if not vacancy_list %}(пусто){% endif%}</span>
   </div>
 
   <div class="accordion" id="accordion-job">
-    {% for vacancy in object_list %}
+    {% for vacancy in vacancy_list %}
       <div class="accordion-group">
         <div class="accordion-heading">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-job" href="#job{{vacancy.pk}}">{{vacancy.title}}</a>

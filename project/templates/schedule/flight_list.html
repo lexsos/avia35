@@ -7,9 +7,10 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Расписание полетов</span>
+    <span>Расписание полетов {% if not flight_list %}(пусто){% endif%}</span>
   </div>
 
+  {% if flight_list %}
   <table class="table table-bordered table-hover schedule-table">
     <thead>
       <tr>
@@ -37,6 +38,7 @@
       {% endfor %}
     </tbody>
   </table>
+  {% endif %}
 
   <div class="modal hide fade modal-order" id="OrderModal">
     <div class="modal-header">

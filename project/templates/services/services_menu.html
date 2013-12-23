@@ -1,5 +1,10 @@
 <ul class="dropdown-menu">
-  {% for service_type in service_types %}
-    <li><a href="{% url 'services_list' service_type.slug %}">{{ service_type.title }}</a></li>
-  {% endfor %}
+  {% if service_types %}
+    {% for service_type in service_types %}
+      <li><a href="{% url 'services_list' service_type.slug %}">{{ service_type.title }}</a></li>
+    {% endfor %}
+  {% else %}
+    <li class="message">Нет активных услуг</li>
+  {% endif %}
 </ul>
+

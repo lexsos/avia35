@@ -8,11 +8,11 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Авиапарк</span>
+    <span>Авиапарк {% if not craft_list %}(пусто){% endif%}</span>
   </div>
 
   <ul class="thumbnails">
-    {% for craft in object_list %}
+    {% for craft in craft_list %}
       <li class="span4">
         <div class="thumbnail park-thumbnails">
           <img src="{{ craft.image|thumbnail_url:'craft_list' }}" alt="{{ craft.title }}">
