@@ -1,0 +1,3 @@
+--requirement=common.txt
+
+psycopg2==2.5.1
