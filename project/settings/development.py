@@ -27,3 +27,6 @@ MIDDLEWARE_CLASSES += (
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
 }
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = '_6_8%3_#i+di=a5z0gdh_eke%u^oa=f=#ik@px^h&9yp1xqur1'

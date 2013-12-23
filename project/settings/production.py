@@ -20,3 +20,8 @@ DATABASES = {
 INSTALLED_APPS += (
     'gunicorn',
 )
+
+try:
+    from .secret import SECRET_KEY
+except:
+    print 'Need secret.py file with SECRET_KEY'
