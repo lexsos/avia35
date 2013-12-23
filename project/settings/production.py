@@ -13,7 +13,7 @@ DATABASES = {
         'USER': 'avia35',
         'HOST': 'localhost',
         'PORT': '',
-        'PASSWORD': '123456',
+        'PASSWORD': '',
     }
 }
 
