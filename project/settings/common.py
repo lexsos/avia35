@@ -182,5 +182,5 @@ EMAIL_HOST = 'ns2.avia35.ru'
 EMAIL_PORT = '25'
 
 JOB_CONFIG = {
-    'NOTICE_TO': ('alexander@avia35.ru', )
+    'NOTICE_TO': ('oup@avia35.ru', )
 }
