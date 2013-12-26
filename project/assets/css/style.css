@@ -148,6 +148,11 @@
     width: 80px;
 }
 
-#accordion-services dt {
+#accordion-services dt, #accordion-job dt {
     margin-top: 10px;
+}
+
+.text-center td, .text-center th {
+    vertical-align: middle;
+    text-align: center;
 }
