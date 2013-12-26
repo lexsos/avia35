@@ -147,3 +147,7 @@
 .table .file-size{
     width: 80px;
 }
+
+#accordion-services dt {
+    margin-top: 10px;
+}
