@@ -31,10 +31,10 @@ class Vacancy(Publication):
         max_length=255,
         blank=True,
     )
-#    additionally = models.TextField(
-#        verbose_name=_('vacancy additionally'),
-#        blank=True,
-#    )
+    additionally = models.TextField(
+        verbose_name=_('vacancy additionally'),
+        blank=True,
+    )
 
     def __unicode__(self):
         return self.title

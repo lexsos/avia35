@@ -21,6 +21,7 @@ class VacancyAdmin(PublicationAdmin):
                     'schedule',
                     'payment',
                     'contacts',
+                    'additionally',
                 )
             }
         ),
