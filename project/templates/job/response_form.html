@@ -8,7 +8,7 @@
 
     <div class="modal-body">
       <div class="control-group{% if form.fio.errors %} error{% endif %}">
-        <label for="{{ form.fio.id_for_label }}">ФИО</label>
+        <label for="{{ form.fio.id_for_label }}">ФИО *</label>
         <div class="controls">
           {{ form.fio }}
           {% if form.fio.errors %}
@@ -17,11 +17,11 @@
         </div>
       </div>
       <div class="control-group{% if form.phone.errors %} error{% endif %}">
-        <label for="{{ form.phone.id_for_label }}">Контактный телефон</label>
+        <label for="{{ form.phone.id_for_label }}">Контактный телефон *</label>
         <div class="controls">
           {{ form.phone }}
           {% if form.phone.errors %}
-            <span class="help-inline">Укажите Ваше телефон</span>
+            <span class="help-inline">Укажите Ваш телефон</span>
           {% endif %}
         </div>
       </div>
