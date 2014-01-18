@@ -53,7 +53,7 @@ msgstr "оплата"
 
 #: models.py:30
 msgid "vacancy contacts"
-msgstr "контакты работадателя"
+msgstr "контакты работодателя"
 
 #: models.py:35
 msgid "vacancy additionally"
