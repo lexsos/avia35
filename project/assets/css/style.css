@@ -173,14 +173,18 @@
     border: 0;
 }
 
-.documet-list .doc-type {
+.documet-list .doc-type-td {
     width: 50px;
     text-align: center;
     vertical-align: middle;
 }
 
-.documet-list .doc-size {
+.documet-list .doc-size-td {
     width: 100px;
     text-align: right;
     vertical-align: middle;
+}
+
+.no-overflow {
+    overflow: visible;
 }

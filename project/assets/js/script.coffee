@@ -26,3 +26,8 @@ $(document).ready =>
 
 
 
+    $('.doc-type').mouseleave ->
+        $('.accordion-group .in').removeClass('no-overflow')
+
+    $('.doc-type').mouseenter ->
+        $('.accordion-group .in').addClass('no-overflow')
