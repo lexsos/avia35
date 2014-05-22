@@ -39,7 +39,7 @@ class DocumentCategory(Publication):
     class Meta:
         verbose_name_plural = _('document category items')
         verbose_name = _('document category item')
-        ordering = ['title']
+        ordering = ['-weight', 'pub_date_start']
 
 
 class Document(Publication):
@@ -51,7 +51,6 @@ class Document(Publication):
     category = models.ForeignKey(
         DocumentCategory,
         verbose_name=_('document category item'),
-
     )
     title = models.CharField(
         verbose_name=_('document title'),

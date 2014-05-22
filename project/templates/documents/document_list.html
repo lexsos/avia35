@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load documents %}
 
 
 {% block documents_active %}active{% endblock %}
@@ -7,29 +8,29 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Документы {% if not document_list %}(пусто){% endif%}</span>
+    <span>Документы {% if not documentcategory_list %}(пусто){% endif%}</span>
   </div>
 
-  {% if document_list %}
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Тип</th>
-        <th>Название</th>
-        <th class="file-size">Размер</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for document in document_list %}
-        <tr>
-          <td>{{forloop.counter}}</td>
-          <td><span class="label doc-type" rel="popover" data-content="{{ document.doc_type.description }}" data-original-title="{{ document.doc_type.title }}">{{ document.doc_type.title }}</span></td>
-          <td><a href="{{ document.document.url }}">{{ document.title }}</a></td>
-          <td>{{ document.get_size_text }}</td>
-        </tr>
+  {% if documentcategory_list %}
+    <div class="accordion" id="accordion-documents">
+      {% for doc_category in documentcategory_list %}
+        <div class="accordion-group">
+
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-documents" href="#doc-category{{doc_category.pk}}">
+              {{doc_category.title}}
+            </a>
+          </div>
+
+          <div id="doc-category{{doc_category.pk}}" class="accordion-body collapse">
+            <div class="accordion-inner">
+              {{ doc_category.description | safe }}
+              {% document_table doc_category %}
+            </div>
+          </div>
+        </div>
       {% endfor %}
-    </tbody>
-  </table>
+    </div>
   {% endif %}
+
 {% endblock %}

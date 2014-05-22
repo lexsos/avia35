@@ -168,3 +168,19 @@
 .pament-banner img {
     margin-right: 10px;
 }
+
+.documet-list td {
+    border: 0;
+}
+
+.documet-list .doc-type {
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.documet-list .doc-size {
+    width: 100px;
+    text-align: right;
+    vertical-align: middle;
+}

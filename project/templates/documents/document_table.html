@@ -1,0 +1,14 @@
+<table class="table table-hover documet-list">
+    <tbody>
+      {% for document in document_list %}
+        <tr>
+          <td class="doc-type"><span class="label doc-type">{{ document.doc_type.title }}</span></td>
+<!--
+          <td><span class="label doc-type" rel="popover" data-content="{{ document.doc_type.description }}" data-original-title="{{ document.doc_type.title }}">{{ document.doc_type.title }}</span></td>
+-->
+          <td><a href="{{ document.document.url }}">{{ document.title }}</a></td>
+          <td class="doc-size">{{ document.get_size_text }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
