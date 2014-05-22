@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-19 11:58+0400\n"
+"POT-Creation-Date: 2014-05-22 10:31+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: admin.py:13
+#: admin.py:14
 msgid "Flight parameters"
+msgstr "Параметры рейса"
+
+#: admin.py:40 admin.py:55
+#, fuzzy
+msgid "None parameters"
 msgstr "Параметры рейса"
 
 #: models.py:9
@@ -43,11 +48,11 @@ msgstr "агенты"
 msgid "agent item"
 msgstr "агент"
 
-#: models.py:31
+#: models.py:32
 msgid "flight direction"
 msgstr "наравление рейса"
 
-#: models.py:35
+#: models.py:36
 msgid "flight departure"
 msgstr "вылет"
 
@@ -59,14 +64,42 @@ msgstr "прибытие"
 msgid "flight order"
 msgstr "заказ билета"
 
-#: models.py:46
+#: models.py:47
 msgid "flight agents"
 msgstr "агенты"
 
-#: models.py:54
+#: models.py:55
 msgid "flights items"
 msgstr "рейсы"
 
-#: models.py:55
+#: models.py:56
 msgid "flight item"
 msgstr "рейс"
+
+#: models.py:63
+msgid "note content"
+msgstr "содержание заметки"
+
+#: models.py:70
+msgid "notes items"
+msgstr "заметки"
+
+#: models.py:71
+msgid "note item"
+msgstr "заметка"
+
+#: models.py:78
+msgid "payment image"
+msgstr "изображение"
+
+#: models.py:82
+msgid "payment title"
+msgstr "название"
+
+#: models.py:90
+msgid "payment banners items"
+msgstr "банеры платежных систем"
+
+#: models.py:91
+msgid "payment banner item"
+msgstr "банер платежной системы"
