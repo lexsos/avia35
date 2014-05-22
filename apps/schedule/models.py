@@ -27,6 +27,7 @@ class Agent(models.Model):
 
 
 class Flight(Publication):
+
     direction = models.CharField(
         verbose_name=_('flight direction'),
         max_length=255,
@@ -54,3 +55,38 @@ class Flight(Publication):
         verbose_name_plural = _('flights items')
         verbose_name = _('flight item')
         ordering = ['-weight', 'direction']
+
+
+class Note(Publication):
+
+    content = models.TextField(
+        verbose_name=_('note content'),
+    )
+
+    def __unicode__(self):
+        return self.content
+
+    class Meta:
+        verbose_name_plural = _('notes items')
+        verbose_name = _('note item')
+        ordering = ['-weight', 'content']
+
+
+class PaymentBanner(Publication):
+
+    image = models.ImageField(
+        verbose_name=_('payment image'),
+        upload_to='schedule',
+    )
+    title = models.CharField(
+        verbose_name=_('payment title'),
+        max_length=255,
+    )
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = _('payment banners items')
+        verbose_name = _('payment banner item')
+        ordering = ['-weight', 'title']

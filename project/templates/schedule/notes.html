@@ -1,0 +1,5 @@
+<div class="note-bar">
+    {% for note in note_list %}
+        {{ note.content | safe }}
+    {% endfor %}
+</div>

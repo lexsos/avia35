@@ -1,0 +1,7 @@
+{% load thumbnail %}
+
+<div class="pament-banner">
+    {% for banner in benner_list %}
+        <img src="{{ banner.image | thumbnail_url:'payment_banner' }}">
+    {% endfor %}
+</div>

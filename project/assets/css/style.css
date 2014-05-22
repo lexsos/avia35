@@ -160,3 +160,11 @@
 .metric-hide {
     display: none;
 }
+
+.note-bar {
+    font-size: 12px;
+}
+
+.pament-banner img {
+    margin-right: 10px;
+}

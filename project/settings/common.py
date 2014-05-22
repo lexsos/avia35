@@ -175,6 +175,7 @@ THUMBNAIL_ALIASES = {
         'news_detail': {'size': (450, 300), 'crop': True},
         'agent_logo': {'size': (130, 50), 'crop': True},
         'service': {'size': (220, 140), 'crop': True},
+        'payment_banner': {'size': (120, 70), 'crop': True},
     },
 }
 
