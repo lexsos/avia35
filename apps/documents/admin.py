@@ -8,15 +8,15 @@ from .models import Document, DocumentType, DocumentCategory
 
 
 class DocumentAdmin(PublicationAdmin):
-    list_filter = ('weight', 'enabled', 'doc_type')
-    list_display = ('title', 'doc_type', 'weight', 'enabled')
+    list_filter = ('weight', 'enabled', 'doc_type', 'category')
+    list_display = ('title', 'doc_type', 'weight', 'enabled', 'category')
 
     fieldsets = (
         (
             _('Document parameters'),
             {
                 'classes': ('wide',),
-                'fields': ('title', 'doc_type', 'document',)
+                'fields': ('title', 'doc_type', 'document', 'category')
             }
         ),
     ) + PublicationAdmin.fieldsets

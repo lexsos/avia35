@@ -48,6 +48,12 @@ class Document(Publication):
         DocumentType,
         verbose_name=_('document type'),
     )
+    category = models.ForeignKey(
+        DocumentCategory,
+        verbose_name=_('document category item'),
+        null=True,
+        blank=True,
+    )
     title = models.CharField(
         verbose_name=_('document title'),
         max_length=255,
