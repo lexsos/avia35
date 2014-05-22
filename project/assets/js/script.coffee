@@ -24,8 +24,6 @@ $(document).ready =>
                         true
             set_ajax_job()
 
-
-
     $('.doc-type').mouseleave ->
         $('.accordion-group .in').removeClass('no-overflow')
 
