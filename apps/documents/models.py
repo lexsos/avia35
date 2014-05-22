@@ -22,6 +22,26 @@ class DocumentType(models.Model):
         ordering = ['title']
 
 
+class DocumentCategory(Publication):
+
+    title = models.CharField(
+        verbose_name=_('document category title'),
+        max_length=255,
+    )
+    description = models.TextField(
+        verbose_name=_('document category description'),
+        blank=True,
+    )
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = _('document category items')
+        verbose_name = _('document category item')
+        ordering = ['title']
+
+
 class Document(Publication):
 
     doc_type = models.ForeignKey(
