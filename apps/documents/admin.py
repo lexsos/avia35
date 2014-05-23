@@ -4,7 +4,12 @@ from dj_mixin.publications.admin import PublicationAdmin
 from dj_mixin.admin import AdminTinymceMixin
 
 
-from .models import Document, DocumentType, DocumentCategory
+from .models import (
+    Document,
+    DocumentType,
+    DocumentCategory,
+    DocumentCounter,
+)
 
 
 class DocumentAdmin(PublicationAdmin):
@@ -42,6 +47,11 @@ class DocumentTypeAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
 
 
+class DocumentCounterAdmin(admin.ModelAdmin):
+    list_display = ('access_date', 'client_ip', 'document')
+
+
 admin.site.register(Document, DocumentAdmin)
 admin.site.register(DocumentType, DocumentTypeAdmin)
 admin.site.register(DocumentCategory, DocumentCategoryAdmin)
+admin.site.register(DocumentCounter, DocumentCounterAdmin)

@@ -11,6 +11,9 @@
             </span>
           </td>
           <td><a href="{% url 'document_counter' document.pk %} ">{{ document.title }}</a></td>
+          {% if show_counters %}
+            <td class="doc-counter-td">{{ document.download_counter }}</td>
+          {% endif %}
           <td class="doc-size-td">{{ document.get_size_text }}</td>
         </tr>
       {% endfor %}

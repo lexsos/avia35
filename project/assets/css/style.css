@@ -185,6 +185,12 @@
     vertical-align: middle;
 }
 
+.documet-list .doc-counter-td {
+    width: 100px;
+    text-align: right;
+    vertical-align: middle;
+}
+
 .no-overflow {
     overflow: visible;
 }

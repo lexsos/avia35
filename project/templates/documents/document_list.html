@@ -25,7 +25,7 @@
           <div id="doc-category{{doc_category.pk}}" class="accordion-body collapse">
             <div class="accordion-inner">
               {{ doc_category.description | safe }}
-              {% document_table doc_category %}
+              {% document_table doc_category user.is_authenticated %}
             </div>
           </div>
         </div>
