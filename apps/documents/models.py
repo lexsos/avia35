@@ -86,3 +86,32 @@ class Document(Publication):
         verbose_name_plural = _('documents')
         verbose_name = _('document')
         ordering = ['-weight', 'pub_date_start']
+
+
+class DocumentCounter(models.Model):
+
+    access_date = models.DateTimeField(
+        auto_now=True,
+        verbose_name=_('access date'),
+    )
+    document = models.ForeignKey(
+        Document,
+        verbose_name=_('document'),
+    )
+    client_ip = models.GenericIPAddressField(
+        verbose_name=_('client ip address'),
+        blank=True,
+        null=True,
+    )
+    user_agent = models.TextField(
+        verbose_name=_('user agent'),
+        blank=True,
+    )
+
+    def __unicode__(self):
+        return u'{0}:{1}'.format(self.access_date, self.document.title)
+
+    class Meta:
+        verbose_name_plural = _('documents counter items')
+        verbose_name = _('document counter')
+        ordering = ['access_date']
