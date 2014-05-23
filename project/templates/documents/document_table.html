@@ -10,7 +10,7 @@
                 {{ document.doc_type.title }}
             </span>
           </td>
-          <td><a href="{{ document.document.url }}">{{ document.title }}</a></td>
+          <td><a href="{% url 'document_counter' document.pk %} ">{{ document.title }}</a></td>
           <td class="doc-size-td">{{ document.get_size_text }}</td>
         </tr>
       {% endfor %}
