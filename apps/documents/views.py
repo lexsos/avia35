@@ -25,7 +25,9 @@ class DocumentCounterRedirectView(RedirectView):
         return ip
 
     def get_redirect_url(self, pk):
-        document = get_object_or_404(Document, pk=pk)
+        qs = Document.objects.published()
+        qs = qs.filter(category__enabled=True)
+        document = get_object_or_404(qs, pk=pk)
         counter = DocumentCounter(
             document = document,
             user_agent= self.request.META['HTTP_USER_AGENT'],
