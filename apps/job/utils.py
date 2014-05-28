@@ -18,9 +18,9 @@ def send_response_notice(response):
             'domain': current_site.domain,
         }
     )
-    theme =  render_to_string(
+    theme = render_to_string(
         'job/response_mail_theme.html',
         {'response': response}
     )
-    theme= theme.replace('\n', ' ')
+    theme = theme.replace('\n', ' ')
     send_mail(theme, message, '', address_to, fail_silently=False)

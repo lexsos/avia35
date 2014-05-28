@@ -12,5 +12,5 @@ class FAQListView(PublicationListView):
         context = super(FAQListView, self).get_context_data(**kwargs)
 
         show = context['object_list'].count() > CONFIG['SMALL_FAQ']
-        context['show_ref_list'] =  show
+        context['show_ref_list'] = show
         return context

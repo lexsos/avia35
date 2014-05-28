@@ -17,5 +17,3 @@ def document_table(caterogy, show_counters):
         'document_list': document_list,
         'show_counters': show_counters,
     }
-
-
