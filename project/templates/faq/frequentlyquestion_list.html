@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block faq_active %}active{% endblock %}
+
+
+{% block main_content %}
+
+  <div class="page-title">
+    <span>Часто задаваемые вопросы {% if not frequentlyquestion_list %}(пусто){% endif%}</span>
+  </div>
+
+  {% if show_ref_list %}
+    {% for frequentlyquestion in frequentlyquestion_list %}
+        <a href="#q{{ frequentlyquestion.pk }}">{{ frequentlyquestion.title }}</a><br>
+    {% endfor %}
+  {% endif %}
+
+  {% for frequentlyquestion in frequentlyquestion_list %}
+    <dl>
+      <a name="q{{ frequentlyquestion.pk }}"></a>
+      <dt>{{ frequentlyquestion.question | safe }}</dt>
+      <dd>{{ frequentlyquestion.answer | safe }}</dd>
+    </dl>
+  {% endfor %}
+
+{% endblock %}

@@ -101,6 +101,7 @@ PROJECT_APPS = (
     'schedule',
     'services',
     'main_page',
+    'faq',
 )
 
 INSTALLED_APPS = (
