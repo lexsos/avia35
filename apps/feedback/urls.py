@@ -13,6 +13,6 @@ urlpatterns = patterns('',
     url(
         r'^success/$',
         TemplateView.as_view(template_name="feedback/question_success.html"),
-        name='feedback_response_success',
+        name='feedback_question_success',
     ),
 )

@@ -12,14 +12,14 @@ def send_question_notice(question):
         return
     current_site = Site.objects.get_current()
     message = render_to_string(
-        'feedback/response_mail.html',
+        'feedback/question_mail.html',
         {
             'question': question,
             'domain': current_site.domain,
         }
     )
     theme = render_to_string(
-        'feedback/response_mail_theme.html',
+        'feedback/question_mail_theme.html',
         {'question': question}
     )
     theme = theme.replace('\n', ' ')

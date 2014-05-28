@@ -11,7 +11,7 @@ class AddQuestion(FormView):
     template_name = 'feedback/question_form.html'
 
     def get_success_url(self):
-        return reverse('feedback_response_success')
+        return reverse('feedback_question_success')
 
     def form_valid(self, form):
         instance = form.save(commit=False)
