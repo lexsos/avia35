@@ -37,11 +37,17 @@
               {% services_menu %}
             </li>
             <li class="{% block news_active %}{% endblock %}"><a href="{% url 'news_list' %}">Новости</a></li>
-            <li class="{% block documents_active %}{% endblock %}"><a href="{% url 'document_list' %}">Документы</a></li>
+            <li class="dropdown {% block info_active %}{% endblock %}">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Информация <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'document_list' %}">Документы</a></li>
+                <li><a href="{% url 'faq_list' %}">Часто задаваемые вопросы</a></li>
+                <li><a href="#FeedbackModal" data-toggle="modal">Задать вопрос</a></li>
+              </ul>
+            </li>
             <li class="{% block park_active %}{% endblock %}"><a href="{% url 'avia_park_list' %}">Авиапарк</a></li>
             <li class="{% block contacts_active %}{% endblock %}"><a href="{% url 'contact_list' %}">Контакты</a></li>
             <li class="{% block job_active %}{% endblock %}"><a href="{% url 'job_list' %}">Вакансии</a></li>
-            <li><a href="#FeedbackModal" data-toggle="modal">Задать вопрос</a></li>
           </ul>
         </div>
       </div>
