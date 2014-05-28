@@ -1,0 +1,48 @@
+<form id="feedback_response_form" action="{% url 'feedback_add_question' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4>Задать вопрос</h4>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="control-group{% if form.fio.errors %} error{% endif %}">
+        <label for="{{ form.fio.id_for_label }}">ФИО *</label>
+        <div class="controls">
+          {{ form.fio }}
+          {% if form.fio.errors %}
+            <span class="help-inline">Укажите Ваше ФИО</span>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="control-group{% if form.contact.errors %} error{% endif %}">
+        <label for="{{ form.contact.id_for_label }}">Ваши контакты (телефон/e-mail) *</label>
+        <div class="controls">
+          {{ form.contact }}
+          {% if form.contact.errors %}
+            <span class="help-inline">Укажите Ваши контакты</span>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="control-group{% if form.content.errors %} error{% endif %}">
+        <label for="{{ form.content.id_for_label }}">Вопрос *</label>
+        <div class="controls">
+          {{ form.content }}
+          {% if form.content.errors %}
+            <span class="help-inline">Укажите Ваш вопрос</span>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer" style="position: relative">
+      <img src="{{ STATIC_URL }}/img/progress.gif" class="send-progress">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </div>
+</form>

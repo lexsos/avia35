@@ -194,3 +194,12 @@
 .no-overflow {
     overflow: visible;
 }
+
+.feedback-modal textarea {
+    width: 501px;
+    height: 95px;
+}
+
+.feedback-modal form{
+    margin: 0;
+}

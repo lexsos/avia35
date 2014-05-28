@@ -102,6 +102,7 @@ PROJECT_APPS = (
     'services',
     'main_page',
     'faq',
+    'feedback',
 )
 
 INSTALLED_APPS = (
@@ -185,4 +186,8 @@ EMAIL_PORT = '25'
 
 JOB_CONFIG = {
     'NOTICE_TO': ('oup@avia35.ru', )
+}
+
+FEEDBACK_CONFIG = {
+    'NOTICE_TO': ('avia_support@avia35.ru', )
 }

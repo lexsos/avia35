@@ -24,6 +24,17 @@ $(document).ready =>
                         true
             set_ajax_job()
 
+    set_ajax_feedback = ->
+        $('#feedback_response_form').ajaxForm
+            success: (data) ->
+                $('#FeedbackModal').html data
+                set_ajax_feedback()
+            beforeSubmit: ->
+                $('#feedback_response_form .send-progress').css('display', 'inline')
+                true
+    set_ajax_feedback()
+
+
     $('.doc-type').mouseleave ->
         $('.accordion-group .in').removeClass('no-overflow')
 

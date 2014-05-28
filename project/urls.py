@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^schedule/', include('schedule.urls')),
     url(r'^services/', include('services.urls')),
     url(r'^faq/', include('faq.urls')),
+    url(r'^feedback/', include('feedback.urls')),
 
     url(r'^$', include('main_page.urls')),
 )
