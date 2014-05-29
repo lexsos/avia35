@@ -1,0 +1,3 @@
+{% for robotdata in robotdata_list %}
+{{ robotdata.content | safe }}
+{% endfor %}

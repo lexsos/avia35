@@ -103,6 +103,7 @@ PROJECT_APPS = (
     'main_page',
     'faq',
     'feedback',
+    'robots',
 )
 
 INSTALLED_APPS = (
