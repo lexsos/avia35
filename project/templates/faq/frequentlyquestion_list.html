@@ -7,7 +7,9 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Часто задаваемые вопросы {% if not frequentlyquestion_list %}(пусто){% endif%}</span>
+    <a href="{% url 'faq_list' %}" class="nav-chain">
+      Часто задаваемые вопросы {% if not frequentlyquestion_list %}(пусто){% endif%}
+    </a>
   </div>
 
   {% if show_ref_list %}

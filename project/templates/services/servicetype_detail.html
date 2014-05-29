@@ -8,7 +8,9 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>{{ servicetype.title }} {% if not servicetype.service_set.published %}(пусто){% endif%}</span>
+    <a href="{% url 'services_list' servicetype.slug %}" class="nav-chain">
+      {{ servicetype.title }} {% if not servicetype.service_set.published %}(пусто){% endif%}
+    </a>
   </div>
 
   <div class="accordion" id="accordion-services">

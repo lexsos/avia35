@@ -7,7 +7,7 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Контакты {% if not contact_list %}(пусто){% endif%}</span>
+    <a href="{% url 'contact_list' %}" class="nav-chain">Контакты {% if not contact_list %}(пусто){% endif%}</a>
   </div>
 
   {% for contact in contact_list %}

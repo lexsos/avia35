@@ -8,7 +8,7 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Авиапарк {% if not craft_list %}(пусто){% endif%}</span>
+    <a href="{% url 'avia_park_list' %}" class="nav-chain">Авиапарк {% if not craft_list %}(пусто){% endif%}</a>
   </div>
 
   <ul class="thumbnails">

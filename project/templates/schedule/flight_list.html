@@ -8,7 +8,7 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Расписание полетов {% if not flight_list %}(пусто){% endif%}</span>
+    <a href="{% url 'schedule_list' %}" class="nav-chain">Расписание полетов {% if not flight_list %}(пусто){% endif%}</a>
   </div>
 
   {% if flight_list %}

@@ -8,7 +8,7 @@
 {% block main_content %}
 
   <div class="page-title">
-    <span>Документы {% if not documentcategory_list %}(пусто){% endif%}</span>
+    <a href="{% url 'document_list' %}" class="nav-chain">Документы {% if not documentcategory_list %}(пусто){% endif%}</a>
   </div>
 
   {% if documentcategory_list %}
