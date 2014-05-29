@@ -21,8 +21,8 @@
 }
 
 .main-navbar .navbar-inner .nav a{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .down-navbar {
@@ -131,6 +131,11 @@
     margin-bottom: 30px;
     font-size: 24px;
     font-family: Helvetica,​Arial,​sans-serif;
+}
+
+.page-title a {
+    color: #999999;
+    text-decoration: none;
 }
 
 .send-progress {

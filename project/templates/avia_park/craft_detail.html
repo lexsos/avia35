@@ -2,10 +2,15 @@
 {% load thumbnail %}
 
 
-{% block park_active %}active{% endblock %}
+{% block enterprise_active %}active{% endblock %}
 
 
 {% block main_content %}
+
+  <div class="page-title">
+    <a href="{% url 'avia_park_list' %}" class="nav-chain">Авиапарк</a> |
+    <a href="{% url 'avia_park_detail' craft.slug %}" class="nav-chain">{{ craft.title }}</a>
+  </div>
 
   <ul class="thumbnails">
     <li class="span6">
