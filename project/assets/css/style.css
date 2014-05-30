@@ -208,3 +208,7 @@
 .feedback-modal form{
     margin: 0;
 }
+
+.history-content {
+    text-indent: 20px;
+}

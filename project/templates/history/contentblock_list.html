@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block enterprise_active %}active{% endblock %}
+
+
+{% block main_content %}
+
+  <div class="page-title">
+    <a href="{% url 'history_list' %}" class="nav-chain">
+      История предприятия {% if not contentblock_list %}(пусто){% endif %}
+    </a>
+  </div>
+
+  {% for block in contentblock_list %}
+    <div class="row">
+      <div class="span2">
+        {% for left_content in block.get_left %}
+            {% if left_content.image %}
+              <img src="{{ left_content.image | thumbnail_url:'history_side_image' }}">
+            {% endif %}
+            {{ left_content.content_rich | safe }}
+            {{ left_content.content_plane | safe }}
+        {% endfor %}
+      </div>
+      <div class="span8 history-content">
+          {{ block.content_rich | safe }}
+          {{ block.content_plane | safe }}
+      </div>
+      <div class="span2">
+        {% for right_content in block.get_right %}
+            {% if right_content.image %}
+              <img src="{{ right_content.image | thumbnail_url:'history_side_image' }}">
+            {% endif %}
+            {{ right_content.content_rich | safe }}
+            {{ right_content.content_plane | safe }}
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}

@@ -104,6 +104,7 @@ PROJECT_APPS = (
     'faq',
     'feedback',
     'robots',
+    'history',
 )
 
 INSTALLED_APPS = (
@@ -179,6 +180,7 @@ THUMBNAIL_ALIASES = {
         'agent_logo': {'size': (130, 50), 'crop': True},
         'service': {'size': (220, 140), 'crop': True},
         'payment_banner': {'size': (120, 70), 'crop': True},
+        'history_side_image': {'size': (140, 0), 'crop': True},
     },
 }
 
