@@ -1,7 +1,5 @@
 from django.conf.urls import patterns, url
-from dj_mixin.publications.views import PublicationListView
 
-from .models import DocumentCategory
 from .views import DocumentCounterRedirectView, DocumentListView
 
 
