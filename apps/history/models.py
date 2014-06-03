@@ -10,6 +10,14 @@ SIDE_CHOICES = (
     (RIGHT_SIDE, _('right')),
 )
 
+IMG_WIDTH = 'WD'
+IMG_HEIGHT = 'HG'
+
+IMG_ADJUSTMENT_CHOICES = (
+    (IMG_WIDTH, _('by width')),
+    (IMG_HEIGHT, _('by height')),
+)
+
 
 class ContentBlock(Publication):
 
@@ -69,6 +77,20 @@ class SideContent(Publication):
         verbose_name=_('content side'),
         max_length=255,
         choices=SIDE_CHOICES,
+    )
+    detail_content_rich = models.TextField(
+        verbose_name=_('detail rich content'),
+        blank=True,
+    )
+    detail_content_plane = models.TextField(
+        verbose_name=_('detail plane content'),
+        blank=True,
+    )
+    detail_img_adjustment = models.CharField(
+        verbose_name=_('detail image adjustment'),
+        max_length=255,
+        choices=IMG_ADJUSTMENT_CHOICES,
+        blank=True,
     )
 
     def __unicode__(self):

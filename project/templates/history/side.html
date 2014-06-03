@@ -1,0 +1,20 @@
+{% load thumbnail %}
+
+
+{% for content in side_content %}
+  {% if content.image and content.detail_img_adjustment %}
+    <a
+        href="#"
+        data-toggle="modal"
+        data-target="#history-image-modal"
+        remote="{% url 'history_img_detail' content.pk %}"
+        class="history-modal-ref"
+    >
+      <img src="{{ content.image | thumbnail_url:'history_side_image' }}">
+    </a>
+  {% elif content.image %}
+    <img src="{{ content.image | thumbnail_url:'history_side_image' }}">
+  {% endif %}
+    {{ content.content_rich | safe }}
+    {{ content.content_plane | safe }}
+{% endfor %}

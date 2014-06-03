@@ -42,9 +42,23 @@ class SideContentAdmin(AdminTinymceMixin, PublicationAdmin):
                 )
             }
         ),
+        (
+            _('detail img parameters'),
+            {
+                'classes': ('wide',),
+                'fields': (
+                    'detail_content_rich',
+                    'detail_content_plane',
+                    'detail_img_adjustment',
+                )
+            }
+        ),
     ) + PublicationAdmin.fieldsets
 
-    rich_fields = ('content_rich', )
+    rich_fields = (
+        'content_rich',
+        'detail_content_rich',
+    )
 
 
 admin.site.register(ContentBlock, ContentBlockAdmin)

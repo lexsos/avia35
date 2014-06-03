@@ -1,12 +1,19 @@
+{% load thumbnail %}
+
+
 <div class="history-detail">
     <button type="button" class="close close-history" data-dismiss="modal" aria-hidden="true">&times;</button>
     <div class="image">
         {% if sidecontent.image %}
-            <img src="{{ sidecontent.image.url }}">
+          {% if sidecontent.detail_img_adjustment == "WD" %}
+            <img src="{{ sidecontent.image | thumbnail_url:'history_detail_wd' }}">
+          {% elif sidecontent.detail_img_adjustment == "HG" %}
+            <img src="{{ sidecontent.image | thumbnail_url:'history_detail_hg' }}">
+          {% endif %}
         {% endif %}
     </div>
     <div class="description">
-        {{ sidecontent.content_rich | safe }}
-        {{ sidecontent.content_plane | safe }}
+        {{ sidecontent.detail_content_rich | safe }}
+        {{ sidecontent.detail_content_plane | safe }}
     </div>
 </div>

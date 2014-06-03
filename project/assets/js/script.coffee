@@ -43,4 +43,5 @@ $(document).ready =>
 
     $('.history-modal-ref').click ->
         url = $(this).attr('remote')
+        $('#history-image-modal .modal-body').html ''
         $('#history-image-modal .modal-body').load url

@@ -181,6 +181,8 @@ THUMBNAIL_ALIASES = {
         'service': {'size': (220, 140), 'crop': True},
         'payment_banner': {'size': (120, 70), 'crop': True},
         'history_side_image': {'size': (140, 0), 'crop': True},
+        'history_detail_hg': {'size': (0, 400), 'crop': True},
+        'history_detail_wd': {'size': (500, 0), 'crop': True},
     },
 }
 
