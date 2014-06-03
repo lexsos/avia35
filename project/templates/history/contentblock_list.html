@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load history %}
 
 
 {% block enterprise_active %}active{% endblock %}
@@ -16,28 +16,14 @@
   {% for block in contentblock_list %}
     <div class="row">
       <div class="span2">
-        {% for left_content in block.get_left %}
-            {% if left_content.image %}
-              <a href="#" data-toggle="modal" data-target="#history-image-modal" remote="{% url 'history_img_detail' left_content.pk %}" class="history-modal-ref" >
-                <img src="{{ left_content.image | thumbnail_url:'history_side_image' }}">
-              </a>
-            {% endif %}
-            {{ left_content.content_rich | safe }}
-            {{ left_content.content_plane | safe }}
-        {% endfor %}
+        {% history_side block.get_left %}
       </div>
       <div class="span8 history-content">
           {{ block.content_rich | safe }}
           {{ block.content_plane | safe }}
       </div>
       <div class="span2">
-        {% for right_content in block.get_right %}
-            {% if right_content.image %}
-              <img src="{{ right_content.image | thumbnail_url:'history_side_image' }}">
-            {% endif %}
-            {{ right_content.content_rich | safe }}
-            {{ right_content.content_plane | safe }}
-        {% endfor %}
+        {% history_side block.get_right %}
       </div>
     </div>
   {% endfor %}
@@ -45,14 +31,6 @@
 
   <!-- Modal show detail image -->
   <div class="modal hide fade" id="history-image-modal">
-  <!--
-    <div class="modal-header history-image-modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    </div>
-  -->
-  <!--
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  -->
     <div class="modal-body history-modal-body">
     </div>
   </div>
