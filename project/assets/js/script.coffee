@@ -40,3 +40,7 @@ $(document).ready =>
 
     $('.doc-type').mouseenter ->
         $('.accordion-group .in').addClass('no-overflow')
+
+    $('.history-modal-ref').click ->
+        url = $(this).attr('remote')
+        $('#history-image-modal .modal-body').load url

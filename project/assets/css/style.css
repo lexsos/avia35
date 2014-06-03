@@ -212,3 +212,32 @@
 .history-content {
     text-indent: 20px;
 }
+
+.history-image-modal-header {
+    min-height: 25px;
+}
+
+.history-detail-description {
+
+}
+
+.history-modal-body {
+    max-height: none;
+}
+
+.history-detail .image {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.history-detail .description{
+    padding-top: 10px;
+}
+
+.close-history {
+    float: none;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 1000;
+}

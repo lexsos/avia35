@@ -18,7 +18,9 @@
       <div class="span2">
         {% for left_content in block.get_left %}
             {% if left_content.image %}
-              <img src="{{ left_content.image | thumbnail_url:'history_side_image' }}">
+              <a href="#" data-toggle="modal" data-target="#history-image-modal" remote="{% url 'history_img_detail' left_content.pk %}" class="history-modal-ref" >
+                <img src="{{ left_content.image | thumbnail_url:'history_side_image' }}">
+              </a>
             {% endif %}
             {{ left_content.content_rich | safe }}
             {{ left_content.content_plane | safe }}
@@ -39,5 +41,20 @@
       </div>
     </div>
   {% endfor %}
+
+
+  <!-- Modal show detail image -->
+  <div class="modal hide fade" id="history-image-modal">
+  <!--
+    <div class="modal-header history-image-modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    </div>
+  -->
+  <!--
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  -->
+    <div class="modal-body history-modal-body">
+    </div>
+  </div>
 
 {% endblock %}

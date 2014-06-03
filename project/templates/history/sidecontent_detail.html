@@ -1,0 +1,12 @@
+<div class="history-detail">
+    <button type="button" class="close close-history" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <div class="image">
+        {% if sidecontent.image %}
+            <img src="{{ sidecontent.image.url }}">
+        {% endif %}
+    </div>
+    <div class="description">
+        {{ sidecontent.content_rich | safe }}
+        {{ sidecontent.content_plane | safe }}
+    </div>
+</div>
