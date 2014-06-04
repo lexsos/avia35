@@ -1,10 +1,8 @@
 from django.conf.urls import patterns, url
-from dj_mixin.publications.views import (
-    PublicationListView,
-    PublicationDetailView,
-)
+from dj_mixin.publications.views import PublicationListView
 
-from .models import ContentBlock, SideContent
+from .models import ContentBlock
+from .views import ImgDetailView
 
 
 urlpatterns = patterns('',
@@ -15,7 +13,7 @@ urlpatterns = patterns('',
     ),
     url(
         r'^img/(?P<pk>\d+)/$',
-        PublicationDetailView.as_view(model=SideContent),
+        ImgDetailView.as_view(),
         name='history_img_detail',
     ),
 )
