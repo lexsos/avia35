@@ -20,7 +20,10 @@ def send_question_notice(question):
     )
     theme = render_to_string(
         'feedback/question_mail_theme.html',
-        {'question': question}
+        {
+            'question': question,
+            'domain': current_site.domain,
+        }
     )
     theme = theme.replace('\n', ' ')
     send_mail(theme, message, '', address_to, fail_silently=False)
