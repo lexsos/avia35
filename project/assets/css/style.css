@@ -1,3 +1,7 @@
+.print-container {
+    display: none;
+}
+
 .top-navbar {
     margin-bottom: 0;
 }
@@ -232,4 +236,8 @@
     right: 10px;
     top: 5px;
     z-index: 1000;
+}
+
+.print-section {
+    margin-right: 10px;
 }

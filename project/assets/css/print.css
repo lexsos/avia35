@@ -1,0 +1,31 @@
+.container {
+    display: none;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-width: 1px;
+    border-color: #CCCCCC;
+    border-style: solid;
+}
+
+td p {
+    padding: 0;
+    margin: 0;
+}
+
+.counter {
+    min-width: 20px;
+}
+
+.center {
+    text-align: center;
+}

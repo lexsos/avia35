@@ -12,6 +12,9 @@
   </div>
 
   {% if flight_list %}
+  <p class="text-right print-section">
+    <a href="javaScript:window.print();"><i class="icon-print"></i></a>
+  </p>
   <table class="table table-bordered table-hover schedule-table text-center">
     <thead>
       <tr>
@@ -56,4 +59,36 @@
     </div>
   </div>
 
+{% endblock %}
+
+
+{% block print_content %}
+  <p class="center">Расписание авиа рейсов ОАО "Вологодское авиационное предприятие"</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Рейс</th>
+        <th>Время вылета</th>
+        <th>Время прилета</th>
+        <th>Заказ билета</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for flight in flight_list %}
+        <tr>
+          <td class="counter center">{{ forloop.counter }}</td>
+          <td class="center">{{ flight.direction }}</td>
+          <td class="center">{{ flight.departure | safe }}</td>
+          <td class="center">{{ flight.arrival | safe }}</td>
+          <td>
+            {{ flight.order | safe }}
+            {% for agent in flight.agents.all %}
+              <p>{{ agent.url | safe }}</p>
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
