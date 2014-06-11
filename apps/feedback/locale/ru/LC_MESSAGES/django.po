@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-28 13:43+0400\n"
+"POT-Creation-Date: 2014-06-11 14:47+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,11 +23,11 @@ msgstr ""
 msgid "please, enter fio"
 msgstr "введите Ваше ФИО"
 
-#: forms.py:18
+#: forms.py:20
 msgid "please, enter contact"
 msgstr "введите Ваши контакты"
 
-#: forms.py:21
+#: forms.py:27
 msgid "please, enter question"
 msgstr "введите Ваш вопрос"
 
@@ -47,10 +47,14 @@ msgstr "вопрос"
 msgid "create date"
 msgstr "дата создания"
 
-#: models.py:27
+#: models.py:24
+msgid "answered"
+msgstr "ответил(а)"
+
+#: models.py:31
 msgid "questions items"
 msgstr "вопросы"
 
-#: models.py:28
+#: models.py:32
 msgid "question item"
 msgstr "вопрос"

@@ -16,8 +16,12 @@ class Question(models.Model):
         verbose_name=_('question content'),
     )
     create_date = models.DateTimeField(
-        auto_now=True,
+        auto_now_add=True,
         verbose_name=_('create date'),
+    )
+    answered = models.BooleanField(
+        default=False,
+        verbose_name=_('answered'),
     )
 
     def __unicode__(self):
