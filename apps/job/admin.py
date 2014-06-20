@@ -39,7 +39,7 @@ class NoteAdmin(AdminTinymceMixin, PublicationAdmin):
     rich_fields = ('content')
 
     fieldsets = (
-        (_('None parameters'), {
+        (_('Note parameters'), {
             'classes': (
                 'wide',
             ),

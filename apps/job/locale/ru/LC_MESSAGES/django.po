@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-26 13:49+0400\n"
+"POT-Creation-Date: 2014-06-20 10:39+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,9 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: admin.py:14
+#: admin.py:15
 msgid "Vacancy parameters"
 msgstr "Параметры вакансии"
+
+#: admin.py:42
+msgid "Note parameters"
+msgstr "Параметры заметки"
 
 #: forms.py:12
 msgid "please, enter fio"
@@ -90,3 +94,15 @@ msgstr "отклики на вакансии"
 #: models.py:81
 msgid "vacancy response"
 msgstr "отклик на вакансию"
+
+#: models.py:88
+msgid "note content"
+msgstr "содержание заметки"
+
+#: models.py:95
+msgid "notes items"
+msgstr "заметки"
+
+#: models.py:96
+msgid "note item"
+msgstr "заметка"
