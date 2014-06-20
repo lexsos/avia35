@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load schedule %}
+{% load thumbnail %}
 
 
 {% block schedule_active %}active{% endblock %}
@@ -44,8 +44,17 @@
   </table>
   {% endif %}
 
-  {% show_notes %}
-  {% show_payment_banners %}
+  <div class="note-bar">
+    {% for note in note_list %}
+        {{ note.content | safe }}
+    {% endfor %}
+  </div>
+
+  <div class="pament-banner">
+    {% for banner in payment_banner_list %}
+        <img src="{{ banner.image | thumbnail_url:'payment_banner' }}">
+    {% endfor %}
+  </div>
 
   <div class="modal hide fade modal-order" id="OrderModal">
     <div class="modal-header">

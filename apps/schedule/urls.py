@@ -1,17 +1,15 @@
 from django.conf.urls import patterns, url
-from dj_mixin.publications.views import (
-    PublicationListView,
-    PublicationDetailView,
-)
+from dj_mixin.publications.views import PublicationDetailView
 
 from .models import Flight
+from .views import FlightListView
 
 
 urlpatterns = patterns(
     '',
     url(
         r'^$',
-        PublicationListView.as_view(model=Flight),
+        FlightListView.as_view(),
         name='schedule_list',
     ),
     url(
