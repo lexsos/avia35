@@ -3,7 +3,8 @@ from django.conf.urls import patterns, url
 from .views import DocumentCounterRedirectView, DocumentListView
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(
         r'^$',
         DocumentListView.as_view(),

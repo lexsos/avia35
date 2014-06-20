@@ -1,12 +1,11 @@
 from django.conf.urls import patterns, url
-from dj_mixin.publications.views import PublicationListView
 from django.views.generic import TemplateView
 
-from .models import Vacancy
 from .views import AddResponse, VacancyListView
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(
         r'^$',
         VacancyListView.as_view(),

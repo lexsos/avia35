@@ -4,7 +4,8 @@ from dj_mixin.publications.views import PublicationListView
 from .models import Contact
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(
         r'^$',
         PublicationListView.as_view(model=Contact),

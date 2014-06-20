@@ -5,7 +5,8 @@ from .models import ContentBlock
 from .views import ImgDetailView
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(
         r'^$',
         PublicationListView.as_view(model=ContentBlock),

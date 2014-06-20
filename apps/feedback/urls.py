@@ -4,7 +4,8 @@ from django.views.generic import TemplateView
 from .views import AddQuestion
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(
         r'^$',
         AddQuestion.as_view(),

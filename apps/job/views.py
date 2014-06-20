@@ -37,7 +37,7 @@ class AddResponse(FormView):
 
 class VacancyListView(PublicationListView):
 
-    model=Vacancy
+    model = Vacancy
 
     def get_context_data(self, **kwargs):
         context = super(VacancyListView, self).get_context_data(**kwargs)

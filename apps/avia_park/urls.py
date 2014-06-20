@@ -7,7 +7,8 @@ from dj_mixin.publications.views import (
 from .models import Craft
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(
         r'^$',
         PublicationListView.as_view(model=Craft),
