@@ -37,7 +37,7 @@ class NoteAdmin(AdminTinymceMixin, PublicationAdmin):
     rich_fields = ('content')
 
     fieldsets = (
-        (_('None parameters'), {
+        (_('Note parameters'), {
             'classes': (
                 'wide',
             ),
@@ -52,7 +52,7 @@ class PaymentBannerAdmin(PublicationAdmin):
     list_display = ('title', 'weight', 'enabled')
 
     fieldsets = (
-        (_('None parameters'), {
+        (_('Banner parameters'), {
             'classes': (
                 'wide',
             ),
