@@ -80,3 +80,18 @@ class VacancyResponse(models.Model):
         verbose_name_plural = _('vacances responses')
         verbose_name = _('vacancy response')
         ordering = ['-create_date']
+
+
+class Note(Publication):
+
+    content = models.TextField(
+        verbose_name=_('note content'),
+    )
+
+    def __unicode__(self):
+        return self.content
+
+    class Meta:
+        verbose_name_plural = _('notes items')
+        verbose_name = _('note item')
+        ordering = ['-weight', 'content']

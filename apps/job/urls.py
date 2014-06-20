@@ -3,13 +3,13 @@ from dj_mixin.publications.views import PublicationListView
 from django.views.generic import TemplateView
 
 from .models import Vacancy
-from .views import AddResponse
+from .views import AddResponse, VacancyListView
 
 
 urlpatterns = patterns('',
     url(
         r'^$',
-        PublicationListView.as_view(model=Vacancy),
+        VacancyListView.as_view(),
         name='job_list',
     ),
     url(

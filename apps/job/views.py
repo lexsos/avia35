@@ -2,8 +2,10 @@ from django.views.generic import FormView
 from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
 
+from dj_mixin.publications.views import PublicationListView
+
 from .forms import ResponseForm
-from .models import Vacancy
+from .models import Vacancy, Note
 from .utils import send_response_notice
 
 
@@ -30,4 +32,14 @@ class AddResponse(FormView):
     def get_context_data(self, **kwargs):
         context = super(AddResponse, self).get_context_data(**kwargs)
         context['vacancy'] = self.vacancy
+        return context
+
+
+class VacancyListView(PublicationListView):
+
+    model=Vacancy
+
+    def get_context_data(self, **kwargs):
+        context = super(VacancyListView, self).get_context_data(**kwargs)
+        context['note_list'] = Note.objects.published()
         return context

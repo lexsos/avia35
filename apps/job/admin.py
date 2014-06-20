@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from dj_mixin.publications.admin import PublicationAdmin
+from dj_mixin.admin import AdminTinymceMixin
 
-from .models import Vacancy, VacancyResponse
+from .models import Vacancy, VacancyResponse, Note
 
 
 class VacancyAdmin(PublicationAdmin):
@@ -33,5 +34,22 @@ class VacancyResponseAdmin(admin.ModelAdmin):
     list_display = ('vacancy', 'create_date', 'fio', 'phone')
 
 
+class NoteAdmin(AdminTinymceMixin, PublicationAdmin):
+    list_display = ('content', 'weight', 'enabled')
+    rich_fields = ('content')
+
+    fieldsets = (
+        (_('None parameters'), {
+            'classes': (
+                'wide',
+            ),
+            'fields': (
+                'content',
+            ),
+        }),
+    ) + PublicationAdmin.fieldsets
+
+
 admin.site.register(Vacancy, VacancyAdmin)
 admin.site.register(VacancyResponse, VacancyResponseAdmin)
+admin.site.register(Note, NoteAdmin)
