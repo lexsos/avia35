@@ -38,6 +38,11 @@ class Flight(Publication):
     arrival = models.TextField(
         verbose_name=_('flight arrival'),
     )
+#    arrival_no = models.CharField(
+#        verbose_name=_('flight arrival number'),
+#        max_length=255,
+#        blank=True,
+#    )
     order = models.TextField(
         verbose_name=_('flight order'),
         blank=True,
