@@ -18,7 +18,7 @@
   <table class="table table-bordered table-hover schedule-table text-center">
     <thead>
       <tr>
-        <th>#</th>
+        <th>Номер</th>
         <th>Рейс</th>
         <th>Время вылета</th>
         <th>Время прилета</th>
@@ -28,7 +28,7 @@
     <tbody>
       {% for flight in flight_list %}
         <tr>
-          <td>{{ forloop.counter }}</td>
+          <td>{{ flight.flight_no }}</td>
           <td>{{ flight.direction }}</td>
           <td>{{ flight.departure | safe }}</td>
           <td>{{ flight.arrival | safe }}</td>
@@ -76,7 +76,7 @@
   <table>
     <thead>
       <tr>
-        <th>#</th>
+        <th>Номер</th>
         <th>Рейс</th>
         <th>Время вылета</th>
         <th>Время прилета</th>
@@ -86,7 +86,7 @@
     <tbody>
       {% for flight in flight_list %}
         <tr>
-          <td class="counter center">{{ forloop.counter }}</td>
+          <td class="counter center">{{ flight.flight_no }}</td>
           <td class="center">{{ flight.direction }}</td>
           <td class="center">{{ flight.departure | safe }}</td>
           <td class="center">{{ flight.arrival | safe }}</td>

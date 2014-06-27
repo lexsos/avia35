@@ -17,6 +17,7 @@ class FlightAdmin(AdminTinymceMixin, PublicationAdmin):
             ),
             'fields': (
                 'direction',
+                'flight_no',
                 'departure',
                 'arrival',
                 'order',

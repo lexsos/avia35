@@ -32,17 +32,17 @@ class Flight(Publication):
         verbose_name=_('flight direction'),
         max_length=255,
     )
+    flight_no = models.CharField(
+        verbose_name=_('flight number'),
+        max_length=255,
+        blank=True,
+    )
     departure = models.TextField(
         verbose_name=_('flight departure'),
     )
     arrival = models.TextField(
         verbose_name=_('flight arrival'),
     )
-#    arrival_no = models.CharField(
-#        verbose_name=_('flight arrival number'),
-#        max_length=255,
-#        blank=True,
-#    )
     order = models.TextField(
         verbose_name=_('flight order'),
         blank=True,
