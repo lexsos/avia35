@@ -4,6 +4,7 @@ south==0.8.2
 pil==1.1.7
 easy-thumbnails==1.2
 django-tinymce==1.5.1
+django-simple-captcha==0.4.3
 
 django-static-precompiler==0.7
 -e git://github.com/lexsos/django-mixin.git#egg=django-mixin

@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'static_precompiler',
     'tinymce',
+    'captcha',
 ) + PROJECT_APPS
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
@@ -196,3 +197,10 @@ JOB_CONFIG = {
 FEEDBACK_CONFIG = {
     'NOTICE_TO': ('avia_support@avia35.ru', )
 }
+
+SOUTH_MIGRATION_MODULES = {
+    'captcha': 'captcha.south_migrations',
+}
+
+CAPTCHA_FILTER_FUNCTIONS = ()
+CAPTCHA_NOISE_FUNCTIONS = ()

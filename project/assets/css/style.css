@@ -241,3 +241,12 @@
 .printer-ref {
     margin-right: 10px;
 }
+
+
+.modal-body {
+    max-height: 450px;
+}
+
+#id_captcha_1 {
+    width: 50px;
+}
