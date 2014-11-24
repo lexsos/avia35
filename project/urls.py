@@ -23,6 +23,7 @@ urlpatterns = patterns('',
     url(r'^feedback/', include('feedback.urls')),
     url(r'^robots\.txt$', include('robots.urls')),
     url(r'^history/', include('history.urls')),
+    url(r'^refresh_captcha/', include('refresh_captcha.urls')),
 
     url(r'^$', include('main_page.urls')),
 )

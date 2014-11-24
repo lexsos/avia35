@@ -105,6 +105,7 @@ PROJECT_APPS = (
     'feedback',
     'robots',
     'history',
+    'refresh_captcha',
 )
 
 INSTALLED_APPS = (
