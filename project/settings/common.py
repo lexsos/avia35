@@ -188,7 +188,7 @@ THUMBNAIL_ALIASES = {
     },
 }
 
-EMAIL_HOST = 'ns2.avia35.ru'
+EMAIL_HOST = 'smtp.avia35.ru'
 EMAIL_PORT = '25'
 
 JOB_CONFIG = {
