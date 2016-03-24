@@ -32,7 +32,7 @@
             <dl>
               {% for parametr in service.serviceparametr_set.all %}
                 <dt>{{ parametr.title }}</dt>
-                <dd>{{ parametr.content }}</dd>
+                <dd>{{ parametr.content | safe }}</dd>
               {% endfor %}
             </dl>
           </div>

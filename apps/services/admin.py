@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from dj_mixin.publications.admin import PublicationAdmin
+from dj_mixin.admin import AdminTinymceMixin
 
 from .models import ServiceType, Service, ServiceParametr, ServiceImage
 
@@ -20,8 +21,9 @@ class ServiceTypeAdmin(PublicationAdmin):
     ) + PublicationAdmin.fieldsets
 
 
-class ServiceParametrInline(admin.StackedInline):
+class ServiceParametrInline(AdminTinymceMixin, admin.StackedInline):
     model = ServiceParametr
+    rich_fields = ('content',)
     extra = 3
 
 
@@ -47,8 +49,9 @@ class ServiceAdmin(PublicationAdmin):
     inlines = [ServiceParametrInline, ServiceImageInline]
 
 
-class ServiceParametrAdmin(admin.ModelAdmin):
+class ServiceParametrAdmin(AdminTinymceMixin, admin.ModelAdmin):
     list_display = ('title', 'service')
+    rich_fields = ('content',)
 
 
 class ServiceImageAdmin(admin.ModelAdmin):
