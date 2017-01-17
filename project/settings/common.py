@@ -203,5 +203,6 @@ SOUTH_MIGRATION_MODULES = {
     'captcha': 'captcha.south_migrations',
 }
 
-CAPTCHA_FILTER_FUNCTIONS = ()
-CAPTCHA_NOISE_FUNCTIONS = ()
+CAPTCHA_FILTER_FUNCTIONS = ('captcha.helpers.post_smooth',)
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_arcs', 'captcha.helpers.noise_dots',)
+CAPTCHA_LENGTH = 6
