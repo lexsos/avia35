@@ -26,4 +26,7 @@ def send_question_notice(question):
         }
     )
     theme = theme.replace('\n', ' ')
-    send_mail(theme, message, '', address_to, fail_silently=False)
+    try:
+        send_mail(theme, message, '', address_to, fail_silently=False)
+    except:
+        pass

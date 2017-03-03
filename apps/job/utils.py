@@ -23,4 +23,7 @@ def send_response_notice(response):
         {'response': response}
     )
     theme = theme.replace('\n', ' ')
-    send_mail(theme, message, '', address_to, fail_silently=False)
+    try:
+        send_mail(theme, message, '', address_to, fail_silently=False)
+    except:
+        pass
