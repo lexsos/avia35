@@ -204,5 +204,5 @@ SOUTH_MIGRATION_MODULES = {
 }
 
 CAPTCHA_FILTER_FUNCTIONS = ('captcha.helpers.post_smooth',)
-CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_arcs', 'captcha.helpers.noise_dots',)
-CAPTCHA_LENGTH = 6
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_dots',)
+CAPTCHA_LENGTH = 4

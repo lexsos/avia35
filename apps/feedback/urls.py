@@ -7,7 +7,7 @@ from .views import AddQuestion
 urlpatterns = patterns(
     '',
     url(
-        r'^$',
+        r'^add_question/$',
         AddQuestion.as_view(),
         name='feedback_add_question',
     ),

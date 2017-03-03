@@ -24,6 +24,7 @@ $(document).ready =>
                         true
             set_ajax_job()
 
+    # ajax for feedback form
     set_ajax_feedback = ->
         $('#feedback_response_form').ajaxForm
             success: (data) ->
@@ -32,8 +33,12 @@ $(document).ready =>
             beforeSubmit: ->
                 $('#feedback_response_form .send-progress').css('display', 'inline')
                 true
-    set_ajax_feedback()
 
+    # load feedback form
+    $('.feedback_menu_btn').click ->
+        form_url = '/feedback/add_question/'
+        $('#FeedbackModal').load form_url, ->
+            set_ajax_feedback()
 
     $('.doc-type').mouseleave ->
         $('.accordion-group .in').removeClass('no-overflow')
