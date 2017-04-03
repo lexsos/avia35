@@ -9,11 +9,11 @@
     <div class="modal-body">
 
       <div class="control-group{% if form.fio.errors %} error{% endif %}">
-        <label for="{{ form.fio.id_for_label }}">ФИО *</label>
+        <label for="{{ form.fio.id_for_label }}">Как к Вам обращаться *</label>
         <div class="controls">
           {{ form.fio }}
           {% if form.fio.errors %}
-            <span class="help-inline">Укажите Ваше ФИО</span>
+            <span class="help-inline">Укажите как к Вам обращаться </span>
           {% endif %}
         </div>
       </div>

@@ -21,7 +21,7 @@ msgstr ""
 
 #: forms.py:12
 msgid "please, enter fio"
-msgstr "введите Ваше ФИО"
+msgstr "как к Вам обращаться"
 
 #: forms.py:20
 msgid "please, enter contact"
