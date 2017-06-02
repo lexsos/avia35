@@ -9,6 +9,7 @@
     <meta charset="utf-8">
     <link href="{{STATIC_URL}}img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name='yandex-verification' content='6662bd01199e4f33' />
+    {{ additional_content.additional_header|safe }}
   </head>
   <body>
     <div class="container">
@@ -25,7 +26,11 @@
       <!-- End top navbar -->
 
       <!-- Start top slider -->
-        {% show_slider %}
+        {% if additional_content.slider_proxy %}
+            {{ additional_content.slider_proxy|safe }}
+        {% else %}
+            {% show_slider %}
+        {% endif %}
       <!-- End top slider -->
 
       <!-- Start main navbar -->
@@ -135,5 +140,6 @@
     <script src="{{STATIC_URL}}js/libs/bootstrap-popover.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/script.coffee" %}"></script>
     <script src="{{STATIC_URL}}js/refresh_captcha.js"></script>
+    {{ additional_content.additional_footer|safe }}
   </body>
 </html>

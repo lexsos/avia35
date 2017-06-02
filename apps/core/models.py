@@ -22,3 +22,13 @@ class PageContent(models.Model):
         ordering = ['page']
         verbose_name_plural = _('pages content')
         verbose_name = _('page content')
+
+    def __str__(self):
+        return self.page
+
+    @classmethod
+    def get_content(cls, page):
+        try:
+            return cls.objects.get(enabled=True, page=page)
+        except cls.DoesNotExist:
+            pass
