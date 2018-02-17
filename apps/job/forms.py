@@ -1,24 +1,14 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from captcha.fields import CaptchaField
 
-from .models import VacancyResponse
+from job.models import VacancyResponse
 
 
 class ResponseForm(forms.ModelForm):
 
     fio = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                'placeholder': _('please, enter fio'),
-                'class': 'input-xlarge',
-            }
-        )
-    )
-    phone = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': _('please, enter phone')})
-    )
-    captcha = CaptchaField()
+        widget=forms.TextInput(attrs={'placeholder': _('please, enter fio'), 'class': 'input-xlarge'}))
+    phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _('please, enter phone')}))
 
     class Meta:
         model = VacancyResponse
