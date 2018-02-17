@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from dj_mixin.publications.admin import PublicationAdmin
 
-from .models import Craft, CraftImage
+from helpers.admin import PublicationAdmin
+from avia_park.models import Craft, CraftImage
 
 
 class CraftAdmin(PublicationAdmin):
+
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'slug', 'weight', 'enabled')
 

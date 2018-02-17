@@ -1,8 +1,7 @@
 from django.contrib import admin
-from dj_mixin.admin import AdminTinymceMixin
-from dj_mixin.publications.admin import EnabledMixin
 
-from .models import Slide
+from helpers.admin import AdminTinymceMixin, EnabledMixin
+from slider.models import Slide
 
 
 class SlideAdmin(AdminTinymceMixin, EnabledMixin, admin.ModelAdmin):

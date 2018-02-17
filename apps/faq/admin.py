@@ -1,9 +1,8 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from dj_mixin.publications.admin import PublicationAdmin
-from dj_mixin.admin import AdminTinymceMixin
 
-from .models import FrequentlyQuestion
+from helpers.admin import PublicationAdmin, AdminTinymceMixin
+from faq.models import FrequentlyQuestion
 
 
 class FrequentlyQuestionAdmin(AdminTinymceMixin, PublicationAdmin):

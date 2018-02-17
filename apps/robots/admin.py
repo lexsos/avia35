@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from dj_mixin.publications.admin import PublicationAdmin
 
-from .models import RobotData
+from helpers.admin import PublicationAdmin
+from robots.models import RobotData
 
 
 class RobotDataAdmin(PublicationAdmin):

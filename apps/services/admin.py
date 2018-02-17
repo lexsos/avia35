@@ -1,9 +1,8 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from dj_mixin.publications.admin import PublicationAdmin
-from dj_mixin.admin import AdminTinymceMixin
 
-from .models import ServiceType, Service, ServiceParametr, ServiceImage
+from helpers.admin import PublicationAdmin, AdminTinymceMixin
+from services.models import ServiceType, Service, ServiceParametr, ServiceImage
 
 
 class ServiceTypeAdmin(PublicationAdmin):
