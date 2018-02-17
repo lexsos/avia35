@@ -4,23 +4,18 @@ from helpers.querysets import PublicationQuerySet
 
 class PublicationManager(models.Manager):
 
-    def expired(self):
-        return self.get_query_set().expired()
+    """ Manager for access to public (is_show_site == True) objects """
 
-    def future(self):
-        return self.get_query_set().future()
+    def __getattr__(self, attr, *args):
+        """ Allow to use queryset methods from custom queryset
+        more info: http://stackoverflow.com/a/2163921/4716629 """
+        try:
+            return getattr(self.__class__, attr, *args)
+        except AttributeError:
+            # don't delegate internal methods to the queryset
+            if attr.startswith('__') and attr.endswith('__'):
+                raise
+            return getattr(self.get_queryset(), attr, *args)
 
-    def enabled(self):
-        return self.get_query_set().enabled()
-
-    def disabled(self):
-        return self.get_query_set().disabled()
-
-    def unpublished(self):
-        return self.get_query_set().unpublished()
-
-    def published(self):
-        return self.get_query_set().published()
-
-    def get_query_set(self):
-        return PublicationQuerySet(self.model, using=self._db)
+    def get_queryset(self):
+        return getattr(self.model, 'QuerySet', PublicationQuerySet)(self.model, using=self._db)
