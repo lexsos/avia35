@@ -1,14 +1,9 @@
-from django.conf.urls import patterns, url
-from dj_mixin.publications.views import PublicationListView
+from django.conf.urls import url
+from helpers.views import PublicationListView
 
-from .models import Content
+from main_page.models import Content
 
 
-urlpatterns = patterns(
-    '',
-    url(
-        r'^$',
-        PublicationListView.as_view(model=Content),
-        name='main_page',
-    ),
-)
+urlpatterns = [
+    url(r'^$', PublicationListView.as_view(model=Content), name='main_page'),
+]

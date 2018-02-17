@@ -1,9 +1,8 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
-from .views import robots_txt
+from robots.views import robots_txt
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', robots_txt, name='robots_txt'),
-)
+]
