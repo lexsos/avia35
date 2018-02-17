@@ -1,22 +1,15 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from dj_mixin.publications.models import Publication
+from helpers.models import Publication
 
 
 class FrequentlyQuestion(Publication):
 
-    title = models.CharField(
-        verbose_name=_('question title'),
-        max_length=255,
-    )
-    question = models.TextField(
-        verbose_name=_('question'),
-    )
-    answer = models.TextField(
-        verbose_name=_('answer'),
-    )
+    title = models.CharField(verbose_name=_('question title'), max_length=255)
+    question = models.TextField(verbose_name=_('question'))
+    answer = models.TextField(verbose_name=_('answer'))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.question
 
     class Meta:

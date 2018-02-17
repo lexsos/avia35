@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from dj_mixin.publications.models import Publication
+from helpers.models import Publication
+
 
 LEFT_SIDE = 'LF'
 RIGHT_SIDE = 'RG'
@@ -21,18 +22,9 @@ IMG_ADJUSTMENT_CHOICES = (
 
 class ContentBlock(Publication):
 
-    name = models.CharField(
-        verbose_name=_('block name'),
-        max_length=255,
-    )
-    content_rich = models.TextField(
-        verbose_name=_('rich content'),
-        blank=True,
-    )
-    content_plane = models.TextField(
-        verbose_name=_('plane content'),
-        blank=True,
-    )
+    name = models.CharField(verbose_name=_('block name'), max_length=255)
+    content_rich = models.TextField(verbose_name=_('rich content'), blank=True)
+    content_plane = models.TextField(verbose_name=_('plane content'), blank=True)
 
     def get_left(self):
         return self.sidecontent_set.published().filter(side=LEFT_SIDE)
@@ -40,7 +32,7 @@ class ContentBlock(Publication):
     def get_right(self):
         return self.sidecontent_set.published().filter(side=RIGHT_SIDE)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -51,49 +43,18 @@ class ContentBlock(Publication):
 
 class SideContent(Publication):
 
-    name = models.CharField(
-        verbose_name=_('content name'),
-        max_length=255,
-    )
-    content_block = models.ForeignKey(
-        ContentBlock,
-        verbose_name=_('content block item'),
-    )
-    content_rich = models.TextField(
-        verbose_name=_('rich content'),
-        blank=True,
-    )
-    content_plane = models.TextField(
-        verbose_name=_('plane content'),
-        blank=True,
-    )
-    image = models.ImageField(
-        verbose_name=_('image content'),
-        upload_to='history',
-        blank=True,
-        null=True,
-    )
-    side = models.CharField(
-        verbose_name=_('content side'),
-        max_length=255,
-        choices=SIDE_CHOICES,
-    )
-    detail_content_rich = models.TextField(
-        verbose_name=_('detail rich content'),
-        blank=True,
-    )
-    detail_content_plane = models.TextField(
-        verbose_name=_('detail plane content'),
-        blank=True,
-    )
+    name = models.CharField(verbose_name=_('content name'), max_length=255)
+    content_block = models.ForeignKey(ContentBlock, on_delete=models.CASCADE, verbose_name=_('content block item'))
+    content_rich = models.TextField(verbose_name=_('rich content'), blank=True)
+    content_plane = models.TextField(verbose_name=_('plane content'), blank=True)
+    image = models.ImageField(verbose_name=_('image content'), upload_to='history', blank=True, null=True)
+    side = models.CharField(verbose_name=_('content side'), max_length=255, choices=SIDE_CHOICES)
+    detail_content_rich = models.TextField(verbose_name=_('detail rich content'), blank=True)
+    detail_content_plane = models.TextField(verbose_name=_('detail plane content'), blank=True)
     detail_img_adjustment = models.CharField(
-        verbose_name=_('detail image adjustment'),
-        max_length=255,
-        choices=IMG_ADJUSTMENT_CHOICES,
-        blank=True,
-    )
+        verbose_name=_('detail image adjustment'), max_length=255, choices=IMG_ADJUSTMENT_CHOICES, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:

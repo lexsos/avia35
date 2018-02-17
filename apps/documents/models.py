@@ -1,19 +1,14 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from dj_mixin.publications.models import Publication
+from helpers.models import Publication
 
 
 class DocumentType(models.Model):
 
-    title = models.CharField(
-        verbose_name=_('doctype title'),
-        max_length=255,
-    )
-    description = models.TextField(
-        verbose_name=_('doctype description'),
-    )
+    title = models.CharField(verbose_name=_('doctype title'), max_length=255)
+    description = models.TextField(verbose_name=_('doctype description'))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
@@ -24,16 +19,10 @@ class DocumentType(models.Model):
 
 class DocumentCategory(Publication):
 
-    title = models.CharField(
-        verbose_name=_('document category title'),
-        max_length=255,
-    )
-    description = models.TextField(
-        verbose_name=_('document category description'),
-        blank=True,
-    )
+    title = models.CharField(verbose_name=_('document category title'), max_length=255)
+    description = models.TextField(verbose_name=_('document category description'), blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
@@ -44,29 +33,16 @@ class DocumentCategory(Publication):
 
 class Document(Publication):
 
-    doc_type = models.ForeignKey(
-        DocumentType,
-        verbose_name=_('document type'),
-    )
-    category = models.ForeignKey(
-        DocumentCategory,
-        verbose_name=_('document category item'),
-    )
-    title = models.CharField(
-        verbose_name=_('document title'),
-        max_length=255,
-    )
-    document = models.FileField(
-        upload_to='documents',
-        verbose_name=_('document file'),
-    )
+    doc_type = models.ForeignKey(DocumentType, on_delete=models.CASCADE, verbose_name=_('document type'))
+    category = models.ForeignKey(DocumentCategory, on_delete=models.CASCADE, verbose_name=_('document category item'))
+    title = models.CharField(verbose_name=_('document title'), max_length=255)
+    document = models.FileField(upload_to='documents', verbose_name=_('document file'))
 
     def get_size_text(self):
         if self.document is None:
-            return u'{0} {1}'.format(0, _('b'))
+            return '{0} {1}'.format(0, _('b'))
         size = self.document.size
         unit = _('b')
-
         if size > 1024:
             size = size/1024.0
             unit = _('Kb')
@@ -76,10 +52,9 @@ class Document(Publication):
         if size > 1024:
             size = size/1024.0
             unit = _('Gb')
+        return '{0:0.1f} {1}'.format(size, unit)
 
-        return u'{0:0.1f} {1}'.format(size, unit)
-
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
@@ -90,26 +65,13 @@ class Document(Publication):
 
 class DocumentCounter(models.Model):
 
-    access_date = models.DateTimeField(
-        auto_now=True,
-        verbose_name=_('access date'),
-    )
-    document = models.ForeignKey(
-        Document,
-        verbose_name=_('document'),
-    )
-    client_ip = models.GenericIPAddressField(
-        verbose_name=_('client ip address'),
-        blank=True,
-        null=True,
-    )
-    user_agent = models.TextField(
-        verbose_name=_('user agent'),
-        blank=True,
-    )
+    access_date = models.DateTimeField(auto_now=True, verbose_name=_('access date'))
+    document = models.ForeignKey(Document, on_delete=models.CASCADE, verbose_name=_('document'))
+    client_ip = models.GenericIPAddressField(verbose_name=_('client ip address'), blank=True, null=True)
+    user_agent = models.TextField(verbose_name=_('user agent'), blank=True)
 
-    def __unicode__(self):
-        return u'{0}:{1}'.format(self.access_date, self.document.title)
+    def __str__(self):
+        return '{0}:{1}'.format(self.access_date, self.document.title)
 
     class Meta:
         verbose_name_plural = _('documents counter items')

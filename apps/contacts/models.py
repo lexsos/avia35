@@ -1,18 +1,13 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from dj_mixin.publications.models import Publication
+from helpers.models import Publication
 
 
 class Contact(Publication):
-    title = models.CharField(
-        verbose_name=_('contact title'),
-        max_length=255,
-    )
-    content = models.TextField(
-        verbose_name=_('contact content'),
-    )
+    title = models.CharField(verbose_name=_('contact title'), max_length=255)
+    content = models.TextField(verbose_name=_('contact content'))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
