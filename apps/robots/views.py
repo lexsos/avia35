@@ -2,7 +2,7 @@ from django.template.response import TemplateResponse
 from django.contrib.sites.models import Site
 from django.http import Http404
 
-from .models import RobotData
+from robots.models import RobotData
 
 
 def robots_txt(request):

@@ -1,9 +1,8 @@
 from django.views.generic.base import RedirectView
 from django.shortcuts import get_object_or_404
 
-from dj_mixin.publications.views import PublicationListView
-
-from .models import Document, DocumentCategory, DocumentCounter
+from helpers.views import PublicationListView
+from documents.models import Document, DocumentCategory, DocumentCounter
 
 
 class DocumentListView(PublicationListView):

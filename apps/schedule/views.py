@@ -1,6 +1,5 @@
-from dj_mixin.publications.views import PublicationListView
-
-from .models import Note, PaymentBanner, Flight
+from helpers.views import PublicationListView
+from schedule.models import Note, PaymentBanner, Flight
 
 
 class FlightListView(PublicationListView):

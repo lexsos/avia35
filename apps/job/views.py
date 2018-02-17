@@ -1,12 +1,11 @@
 from django.views.generic import FormView
 from django.shortcuts import get_object_or_404
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
-from dj_mixin.publications.views import PublicationListView
-
-from .forms import ResponseForm
-from .models import Vacancy, Note
-from .utils import send_response_notice
+from helpers.views import PublicationListView
+from job.forms import ResponseForm
+from job.models import Vacancy, Note
+from job.utils import send_response_notice
 
 
 class AddResponse(FormView):

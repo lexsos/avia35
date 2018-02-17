@@ -1,7 +1,6 @@
-from dj_mixin.publications.views import PublicationListView
-
-from .models import FrequentlyQuestion
-from .settings import CONFIG
+from helpers.views import PublicationListView
+from faq.models import FrequentlyQuestion
+from faq.settings import CONFIG
 
 
 class FAQListView(PublicationListView):

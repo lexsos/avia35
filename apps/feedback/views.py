@@ -1,8 +1,8 @@
 from django.views.generic import FormView
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
-from .forms import QuestionForm
-from .utils import send_question_notice
+from feedback.forms import QuestionForm
+from feedback.utils import send_question_notice
 
 
 class AddQuestion(FormView):

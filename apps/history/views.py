@@ -1,7 +1,7 @@
-from dj_mixin.publications.views import PublicationDetailView
 from django.shortcuts import get_object_or_404
 
-from .models import SideContent, ContentBlock
+from helpers.views import PublicationDetailView
+from history.models import SideContent, ContentBlock
 
 
 class ImgDetailView(PublicationDetailView):
