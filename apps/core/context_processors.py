@@ -1,5 +1,6 @@
+from django.urls import resolve
+
 from core.models import PageContent
-from django.core.urlresolvers import resolve
 
 
 def additional_page_content(request):
