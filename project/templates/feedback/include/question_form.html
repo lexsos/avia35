@@ -38,17 +38,6 @@
         </div>
       </div>
 
-      <div class="control-group{% if form.captcha.errors %} error{% endif %}">
-        <label for="{{ form.captcha.id_for_label }}">Защитный код *</label>
-        <div class="controls">
-          {{ form.captcha }}
-          <a class="btn refresh_captcha_btn" onclick="refresh_captcha(this)" url="{% url 'refresh_captcha' %}">Обновить</a>
-          {% if form.captcha.errors %}
-            <span class="help-inline">Укажите защитный код</span>
-          {% endif %}
-        </div>
-      </div>
-
     </div>
 
     <div class="modal-footer" style="position: relative">
