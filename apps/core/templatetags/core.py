@@ -23,12 +23,12 @@ def intellipages(value, arg=None):
     if current <= 5:
         pages.extend(range(1, current))
     else:
-        pages.extend([1, 0] + range(current-2, current))
+        pages.extend([1, 0] + list(range(current-2, current)))
     pages.append(current)
     if current > count - 5:
         pages.extend(range(current+1, count+1))
     else:
-        pages.extend(range(current+1, current+3) + [0, count])
+        pages.extend(list(range(current+1, current+3)) + [0, count])
     return pages
 
 
