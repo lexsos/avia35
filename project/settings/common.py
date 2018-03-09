@@ -1,6 +1,8 @@
 import os
 
 
+BASE_DIR = os.path.join(os.path.dirname(__file__), '..', '..')
+BASE_DIR = os.path.normpath(os.path.abspath(BASE_DIR))
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..')
 PROJECT_ROOT = os.path.normpath(os.path.abspath(PROJECT_ROOT))
 
