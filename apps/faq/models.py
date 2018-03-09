@@ -1,18 +1,17 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from helpers.models import Publication
 
 
 class FrequentlyQuestion(Publication):
 
-    title = models.CharField(verbose_name=_('question title'), max_length=255)
-    question = models.TextField(verbose_name=_('question'))
-    answer = models.TextField(verbose_name=_('answer'))
+    title = models.CharField(verbose_name='заголовок', max_length=255)
+    question = models.TextField(verbose_name='вопрос')
+    answer = models.TextField(verbose_name='ответ')
 
     def __str__(self):
         return self.question
 
     class Meta:
-        verbose_name_plural = _('frequently questions items')
-        verbose_name = _('frequently question item')
+        verbose_name_plural = 'часто задаваемые вопросы'
+        verbose_name = 'часто задаваемый вопрос'
         ordering = ['-weight', '-pub_date_start']
