@@ -9,7 +9,4 @@ register = template.Library()
 
 @register.inclusion_tag('feedback/tag/feedback_form.html')
 def feedback_form():
-    return {
-        'form': QuestionForm(),
-        'STATIC_URL': settings.STATIC_URL,
-    }
+    return {'form': QuestionForm(), 'STATIC_URL': settings.STATIC_URL}
