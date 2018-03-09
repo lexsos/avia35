@@ -1,79 +1,80 @@
+import os
+
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from helpers.models import Publication
 
 
 class DocumentType(models.Model):
 
-    title = models.CharField(verbose_name=_('doctype title'), max_length=255)
-    description = models.TextField(verbose_name=_('doctype description'))
+    title = models.CharField(verbose_name='название', max_length=255)
+    description = models.TextField(verbose_name='описание')
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name_plural = _('documents types')
-        verbose_name = _('document type')
+        verbose_name_plural = 'типы документов'
+        verbose_name = 'тип документа'
         ordering = ['title']
 
 
 class DocumentCategory(Publication):
 
-    title = models.CharField(verbose_name=_('document category title'), max_length=255)
-    description = models.TextField(verbose_name=_('document category description'), blank=True)
+    title = models.CharField(verbose_name='название', max_length=255)
+    description = models.TextField(verbose_name='описание', blank=True)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name_plural = _('document category items')
-        verbose_name = _('document category item')
+        verbose_name_plural = 'категории документов'
+        verbose_name = 'категория документа'
         ordering = ['-weight', 'pub_date_start']
 
 
 class Document(Publication):
 
-    doc_type = models.ForeignKey(DocumentType, on_delete=models.CASCADE, verbose_name=_('document type'))
-    category = models.ForeignKey(DocumentCategory, on_delete=models.CASCADE, verbose_name=_('document category item'))
-    title = models.CharField(verbose_name=_('document title'), max_length=255)
-    document = models.FileField(upload_to='documents', verbose_name=_('document file'))
+    doc_type = models.ForeignKey(DocumentType, on_delete=models.CASCADE, verbose_name='тип документа')
+    category = models.ForeignKey(DocumentCategory, on_delete=models.CASCADE, verbose_name='категория документа')
+    title = models.CharField(verbose_name='название', max_length=255)
+    document = models.FileField(upload_to='documents', verbose_name='файл')
 
     def get_size_text(self):
-        if self.document is None:
-            return '{0} {1}'.format(0, _('b'))
+        if (not self.document) or (not os.path.exists(self.document.path)):
+            return '{0} {1}'.format(0, 'байт')
         size = self.document.size
-        unit = _('b')
+        unit = 'байт'
         if size > 1024:
             size = size/1024.0
-            unit = _('Kb')
+            unit = 'Кб'
         if size > 1024:
             size = size/1024.0
-            unit = _('Mb')
+            unit = 'Мб'
         if size > 1024:
             size = size/1024.0
-            unit = _('Gb')
+            unit = 'Гб'
         return '{0:0.1f} {1}'.format(size, unit)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name_plural = _('documents')
-        verbose_name = _('document')
+        verbose_name_plural = 'документы'
+        verbose_name = 'документ'
         ordering = ['-weight', 'pub_date_start']
 
 
 class DocumentCounter(models.Model):
 
-    access_date = models.DateTimeField(auto_now=True, verbose_name=_('access date'))
-    document = models.ForeignKey(Document, on_delete=models.CASCADE, verbose_name=_('document'))
-    client_ip = models.GenericIPAddressField(verbose_name=_('client ip address'), blank=True, null=True)
-    user_agent = models.TextField(verbose_name=_('user agent'), blank=True)
+    access_date = models.DateTimeField(auto_now=True, verbose_name='дата доступа')
+    document = models.ForeignKey(Document, on_delete=models.CASCADE, verbose_name='документ')
+    client_ip = models.GenericIPAddressField(verbose_name='ip адрес пользователя', blank=True, null=True)
+    user_agent = models.TextField(verbose_name='веб-браузер', blank=True)
 
     def __str__(self):
         return '{0}:{1}'.format(self.access_date, self.document.title)
 
     class Meta:
-        verbose_name_plural = _('documents counter items')
-        verbose_name = _('document counter')
+        verbose_name_plural = 'счетчики документов'
+        verbose_name = 'счетчик документа'
         ordering = ['access_date']

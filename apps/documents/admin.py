@@ -1,39 +1,28 @@
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
 
 from helpers.admin import PublicationAdmin, AdminTinymceMixin
 from documents.models import Document, DocumentType, DocumentCategory, DocumentCounter
 
 
 class DocumentAdmin(PublicationAdmin):
+
+    CUSTOM_FIELDS = (
+        ('Параметры документа', {'classes': ('wide',), 'fields': ('title', 'doc_type', 'document', 'category')}),)
+
     list_filter = ('weight', 'enabled', 'doc_type', 'category')
     list_display = ('title', 'doc_type', 'weight', 'enabled', 'category')
-
-    fieldsets = (
-        (
-            _('Document parameters'),
-            {
-                'classes': ('wide',),
-                'fields': ('title', 'doc_type', 'document', 'category')
-            }
-        ),
-    ) + PublicationAdmin.fieldsets
+    fieldsets = CUSTOM_FIELDS  + PublicationAdmin.fieldsets
 
 
 class DocumentCategoryAdmin(AdminTinymceMixin, PublicationAdmin):
+
+    CUSTOM_FIELDS = (
+        ('Параметры категории документа', {'classes': ('wide',), 'fields': ('title', 'description',)}),)
+
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'weight', 'enabled')
     rich_fields = ('description',)
-
-    fieldsets = (
-        (
-            _('document category parameters'),
-            {
-                'classes': ('wide',),
-                'fields': ('title', 'description',)
-            }
-        ),
-    ) + PublicationAdmin.fieldsets
+    fieldsets = CUSTOM_FIELDS + PublicationAdmin.fieldsets
 
 
 class DocumentTypeAdmin(admin.ModelAdmin):
