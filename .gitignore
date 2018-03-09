@@ -7,3 +7,4 @@ project/public
 raw/
 project/settings/secret.py
 .idea/
+var/

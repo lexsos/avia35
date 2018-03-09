@@ -1,14 +1,13 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from helpers.models import Publication
 
 
 class Craft(Publication):
 
-    title = models.CharField(verbose_name=_('craft title'), max_length=255)
-    description = models.TextField(verbose_name=_('craft description'), blank=True)
-    image = models.ImageField(verbose_name=_('craft image'), upload_to='avia_park')
-    slug = models.CharField(verbose_name=_('craft slug'), max_length=255, unique=True)
+    title = models.CharField(verbose_name='название', max_length=255)
+    description = models.TextField(verbose_name='описание', blank=True)
+    image = models.ImageField(verbose_name='изображение судна', upload_to='avia_park')
+    slug = models.CharField(verbose_name='slug', max_length=255, unique=True)
 
     def __str__(self):
         return self.title
@@ -23,20 +22,20 @@ class Craft(Publication):
         return self.image
 
     class Meta:
-        verbose_name_plural = _('crafts')
-        verbose_name = _('craft')
+        verbose_name_plural = 'суда'
+        verbose_name = 'судно'
         ordering = ['-weight', '-pub_date_start']
 
 
 class CraftImage(models.Model):
 
-    craft = models.ForeignKey(Craft, on_delete=models.CASCADE, verbose_name=_('craft'))
-    image = models.ImageField(verbose_name=_('craft image'), upload_to='avia_park')
+    craft = models.ForeignKey(Craft, on_delete=models.CASCADE, verbose_name='судно')
+    image = models.ImageField(verbose_name='изображение судна', upload_to='avia_park')
 
     def __str__(self):
         return '{0}:{1}'.format(self.craft.title, self.image)
 
     class Meta:
-        verbose_name_plural = _('crafts images')
-        verbose_name = _('craft image')
+        verbose_name_plural = 'изображения судов'
+        verbose_name = 'изображение судна'
         ordering = ['craft__title']

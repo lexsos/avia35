@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
 
 from helpers.admin import PublicationAdmin
 from avia_park.models import Craft, CraftImage
@@ -7,18 +6,12 @@ from avia_park.models import Craft, CraftImage
 
 class CraftAdmin(PublicationAdmin):
 
+    CUSTOM_FIELDS = (
+        ('Параметры судна', {'classes': ('wide',), 'fields': ('title', 'description', 'image', 'slug')}),)
+
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'slug', 'weight', 'enabled')
-
-    fieldsets = (
-        (
-            _('Craft parameters'),
-            {
-                'classes': ('wide',),
-                'fields': ('title', 'description', 'image', 'slug')
-            }
-        ),
-    ) + PublicationAdmin.fieldsets
+    fieldsets = CUSTOM_FIELDS + PublicationAdmin.fieldsets
 
 
 class CraftImageAdmin(admin.ModelAdmin):
