@@ -178,6 +178,7 @@ THUMBNAIL_ALIASES = {
         'history_detail_wd': {'size': (500, 0), 'crop': True},
     },
 }
+THUMBNAIL_BASEDIR = 'thumbs'
 
 EMAIL_HOST = 'smtp.avia35.ru'
 EMAIL_PORT = '25'
