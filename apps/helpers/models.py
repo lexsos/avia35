@@ -1,38 +1,22 @@
 from django.db import models
 from django.utils import timezone
-from django.utils.translation import ugettext_lazy as _
 
 from helpers.managers import PublicationManager
 
 
 class Publication(models.Model):
+
     """Abstract model fot publication like objects."""
 
-    enabled = models.BooleanField(
-        verbose_name=_('enabled'),
-        default=True,
-        db_index=True,
-        help_text=_('show/hide record.'),
-    )
+    enabled = models.BooleanField(verbose_name='включено', default=True, db_index=True, help_text='показать/скрыть')
     pub_date_start = models.DateTimeField(
-        verbose_name=_('start date for publication'),
-        default=timezone.now,
-        db_index=True,
-        help_text=_('Rocord will be visible form this date.'),
-    )
+        verbose_name='дата начала публикации', default=timezone.now, db_index=True,
+        help_text='Будет отображаться начиная с указанной даты')
     pub_date_end = models.DateTimeField(
-        verbose_name=_('end date for publication'),
-        null=True,
-        blank=True,
-        db_index=True,
-        help_text=_('Rocord will be invisible form this date.'),
-    )
+        verbose_name='дата конца публикации', null=True, blank=True, db_index=True,
+        help_text='Будет скрыто начиная с указанной даты')
     weight = models.PositiveIntegerField(
-        verbose_name=_('weight of publication'),
-        db_index=True,
-        default=0,
-        help_text=_('Rocord will be first with greate weight.'),
-    )
+        verbose_name='вес', db_index=True, default=0, help_text='Запись с большим весом будет первой')
 
     objects = PublicationManager()
 

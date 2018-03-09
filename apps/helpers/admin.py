@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
 from tinymce.widgets import AdminTinyMCE
 
 
@@ -25,16 +24,12 @@ class EnabledMixin(object):
         queryset.update(enabled=False)
 
     def get_actions(self, request):
-        actions = super(EnabledMixin, self).get_actions(request)
-        if not 'make_enabled' in actions:
-            action = (EnabledMixin.make_enabled,
-                      'make_enabled',
-                      _('Enable selected %(verbose_name_plural)s'))
+        actions = super().get_actions(request)
+        if 'make_enabled' not in actions:
+            action = (EnabledMixin.make_enabled, 'make_enabled', 'Включить выбранные %(verbose_name_plural)s')
             actions['make_enabled'] = action
-        if not 'make_disabled' in actions:
-            action = (EnabledMixin.make_disabled,
-                      'make_disabled',
-                      _('Disable selected %(verbose_name_plural)s'))
+        if 'make_disabled' not in actions:
+            action = (EnabledMixin.make_disabled, 'make_disabled', 'Отключить выбранные %(verbose_name_plural)s')
             actions['make_disabled'] = action
         return actions
 
@@ -45,28 +40,20 @@ class WeightMixin(object):
         queryset.update(weight=0)
 
     def get_actions(self, request):
-        actions = super(WeightMixin, self).get_actions(request)
-        if not 'zero_weight' in actions:
-            action = (WeightMixin.zero_weight,
-                      'zero_weight',
-                      _('Set weight to 0 on selected %(verbose_name_plural)s'))
+        actions = super().get_actions(request)
+        if 'zero_weight' not in actions:
+            action = (WeightMixin.zero_weight, 'zero_weight', 'Установить вес в 0 у выбранных %(verbose_name_plural)s')
             actions['zero_weight'] = action
         return actions
 
 
 class PublicationAdmin(EnabledMixin, WeightMixin, admin.ModelAdmin):
 
+    PUBLICATION_FIELDS = 'enabled', 'pub_date_start', 'pub_date_end', 'weight'
+
     list_filter = ('enabled', 'pub_date_start', 'weight')
     list_display = ('enabled', 'pub_date_start', 'pub_date_end', 'weight')
-    list_per_page = 30
+    list_per_page = 100
     date_hierarchy = 'pub_date_start'
 
-    fieldsets = (
-        (_('Publication parameters'), {
-            'classes': ('wide',),
-            'fields': ('enabled',
-                       'pub_date_start',
-                       'pub_date_end',
-                       'weight')
-        }),
-    )
+    fieldsets = (('Параметры публикации', {'classes': ('wide',), 'fields': PUBLICATION_FIELDS}),)
