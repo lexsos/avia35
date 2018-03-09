@@ -42,9 +42,7 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'var', 'public', 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'assets'),
-)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'client'), )
 
 # List of finder classes that know how to find static files in
 # various locations.
