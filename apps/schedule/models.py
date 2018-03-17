@@ -1,19 +1,17 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from helpers.models import Publication
 
 
 class Agent(models.Model):
 
-    title = models.CharField(verbose_name=_('agent title'), max_length=255)
-    url = models.URLField(verbose_name=_('agent url'))
-    image = models.ImageField(verbose_name=_('agent logo'), upload_to='schedule', blank=True, null=True)
+    title = models.CharField(verbose_name='название', max_length=255)
+    url = models.URLField(verbose_name='ссылка')
+    image = models.ImageField(verbose_name='логотип', upload_to='schedule', blank=True, null=True)
 
     class Meta:
-        verbose_name_plural = _('agents items')
-        verbose_name = _('agent item')
+        verbose_name_plural = 'агенты'
+        verbose_name = 'агент'
         ordering = ['title']
-
 
     def __str__(self):
         return self.title
@@ -21,16 +19,16 @@ class Agent(models.Model):
 
 class Flight(Publication):
 
-    direction = models.CharField(verbose_name=_('flight direction'), max_length=255)
-    flight_no = models.CharField(verbose_name=_('flight number'), max_length=255, blank=True)
-    departure = models.TextField(verbose_name=_('flight departure'))
-    arrival = models.TextField(verbose_name=_('flight arrival'))
-    order = models.TextField(verbose_name=_('flight order'), blank=True)
-    agents = models.ManyToManyField(Agent, verbose_name=_('flight agents'), blank=True)
+    direction = models.CharField(verbose_name='наравление рейса', max_length=255)
+    flight_no = models.CharField(verbose_name='номер рейса', max_length=255, blank=True)
+    departure = models.TextField(verbose_name='вылет')
+    arrival = models.TextField(verbose_name='прибытие')
+    order = models.TextField(verbose_name='заказ билета', blank=True)
+    agents = models.ManyToManyField(Agent, verbose_name='агенты', blank=True)
 
     class Meta:
-        verbose_name_plural = _('flights items')
-        verbose_name = _('flight item')
+        verbose_name_plural = 'рейсы'
+        verbose_name = 'рейс'
         ordering = ['-weight', 'direction']
 
     def __str__(self):
@@ -39,11 +37,11 @@ class Flight(Publication):
 
 class Note(Publication):
 
-    content = models.TextField(verbose_name=_('note content'))
+    content = models.TextField(verbose_name='содержание заметки')
 
     class Meta:
-        verbose_name_plural = _('notes items')
-        verbose_name = _('note item')
+        verbose_name_plural = 'заметки'
+        verbose_name = 'заметка'
         ordering = ['-weight', 'content']
 
     def __str__(self):
@@ -52,12 +50,12 @@ class Note(Publication):
 
 class PaymentBanner(Publication):
 
-    image = models.ImageField(verbose_name=_('payment image'), upload_to='schedule')
-    title = models.CharField(verbose_name=_('payment title'), max_length=255)
+    image = models.ImageField(verbose_name='изображение', upload_to='schedule')
+    title = models.CharField(verbose_name='название', max_length=255)
 
     class Meta:
-        verbose_name_plural = _('payment banners items')
-        verbose_name = _('payment banner item')
+        verbose_name_plural = 'банеры платежных систем'
+        verbose_name = 'банер платежной системы'
         ordering = ['-weight', 'title']
 
     def __str__(self):
