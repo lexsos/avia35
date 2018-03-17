@@ -1,5 +1,4 @@
 from django import forms
-from django.utils.translation import ugettext_lazy as _
 
 from job.models import VacancyResponse
 
@@ -7,8 +6,8 @@ from job.models import VacancyResponse
 class ResponseForm(forms.ModelForm):
 
     fio = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': _('please, enter fio'), 'class': 'input-xlarge'}))
-    phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _('please, enter phone')}))
+        widget=forms.TextInput(attrs={'placeholder': 'как к Вам обращаться', 'class': 'input-xlarge'}))
+    phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'введите номер телефона'}))
 
     class Meta:
         model = VacancyResponse
