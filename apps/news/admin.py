@@ -1,29 +1,17 @@
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
 
 from helpers.admin import PublicationAdmin, AdminTinymceMixin
 from news.models import News
 
 
 class NewsAdmin(AdminTinymceMixin, PublicationAdmin):
+
+    CUSTOM_FIELDS = (('Параметры новости', {'classes': ('wide',), 'fields': (
+        'title', 'preview', 'content', 'image',)}), )
+
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'weight', 'enabled')
-
-    fieldsets = (
-        (
-            _('News parameters'),
-            {
-                'classes': ('wide',),
-                'fields': (
-                    'title',
-                    'preview',
-                    'content',
-                    'image',
-                )
-            }
-        ),
-    ) + PublicationAdmin.fieldsets
-
+    fieldsets = CUSTOM_FIELDS + PublicationAdmin.fieldsets
     rich_fields = ('preview', 'content')
 
 

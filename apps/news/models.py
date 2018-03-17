@@ -1,18 +1,17 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from helpers.models import Publication
 
 
 class News(Publication):
 
-    title = models.CharField(verbose_name=_('news title'), max_length=255)
-    preview = models.TextField(verbose_name=_('news preview'))
-    content = models.TextField(verbose_name=_('news content'), blank=True)
-    image = models.ImageField(verbose_name=_('news image'), upload_to='news')
+    title = models.CharField(verbose_name='заголовок', max_length=255)
+    preview = models.TextField(verbose_name='анонс')
+    content = models.TextField(verbose_name='содержимое', blank=True)
+    image = models.ImageField(verbose_name='изображение', upload_to='news')
 
     class Meta:
-        verbose_name_plural = _('news items')
-        verbose_name = _('news item')
+        verbose_name_plural = 'новости'
+        verbose_name = 'новость'
         ordering = ['-weight', '-pub_date_start']
 
     def get_content(self):
