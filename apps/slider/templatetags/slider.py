@@ -12,7 +12,4 @@ def show_slider():
     first_pk = None
     if slides.exists():
         first_pk = slides[0].pk
-    return {
-        'slides': slides,
-        'first_pk': first_pk,
-    }
+    return {'slides': slides, 'first_pk': first_pk}

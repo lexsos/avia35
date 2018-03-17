@@ -1,18 +1,18 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 
 
 class Slide(models.Model):
 
-    title = models.TextField(verbose_name=_('slide title'), help_text=_('text on slide'))
-    image = models.ImageField(verbose_name=_('slide image'), help_text=_('image of slide'), upload_to='slider')
-    weight = models.IntegerField(verbose_name=_('weight'), default=0, help_text=_('determine the order of slides'))
-    enabled = models.BooleanField(verbose_name=_('enabled'), default=True, help_text=_('if set, then slide will show'))
+    title = models.TextField(verbose_name='заголовок слайда', help_text='текст который будет отображаться на слайде')
+    image = models.ImageField(verbose_name='изображение слайда', upload_to='slider')
+    weight = models.IntegerField(verbose_name='вес', default=0, help_text='определяет порядок отображения слайдов')
+    enabled = models.BooleanField(
+        verbose_name='включено', default=True, help_text='если установленo, слайд будет отображаться')
 
     class Meta:
         ordering = ['-weight']
-        verbose_name_plural = _('slides')
-        verbose_name = _('slide')
+        verbose_name_plural = 'слайды'
+        verbose_name = 'слайд'
 
     def __str__(self):
         return self.title

@@ -5,6 +5,7 @@ from slider.models import Slide
 
 
 class SlideAdmin(AdminTinymceMixin, EnabledMixin, admin.ModelAdmin):
+
     list_filter = ('weight', 'enabled')
     list_display = ('title', 'weight', 'enabled')
     rich_fields = ('title',)
