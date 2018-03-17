@@ -15,8 +15,6 @@ class ImgDetailView(PublicationDetailView):
 
     def get_object(self, queryset=None):
         side = super(ImgDetailView, self).get_object(queryset)
-
         qs_block = ContentBlock.objects.published()
         get_object_or_404(qs_block, pk=side.content_block.pk)
-
         return side
