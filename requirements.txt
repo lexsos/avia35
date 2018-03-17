@@ -11,5 +11,5 @@ flake8==2.0
 pep8==1.4.6
 
 # production
-psycopg2==2.5.1
-gunicorn==18.0
+gunicorn==19.7.1
+psycopg2==2.7.1
