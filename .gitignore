@@ -8,3 +8,4 @@ raw/
 project/settings/secret.py
 .idea/
 var/
+settings_local.py

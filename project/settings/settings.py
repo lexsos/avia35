@@ -1,5 +1,6 @@
 import os
 
+DEBUG = True
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), '..', '..')
 BASE_DIR = os.path.normpath(os.path.abspath(BASE_DIR))
@@ -198,3 +199,34 @@ SOUTH_MIGRATION_MODULES = {
 CAPTCHA_FILTER_FUNCTIONS = ('captcha.helpers.post_smooth',)
 CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_dots',)
 CAPTCHA_LENGTH = 4
+
+FILE_UPLOAD_PERMISSIONS = 0o644
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'var', 'sqlite3.db'),
+    }
+}
+
+ALLOWED_HOSTS = []
+
+try:
+    from .settings_local import *  # noqa
+except ImportError:
+    pass
+
+
+if DEBUG:
+
+    INSTALLED_APPS += (
+        'debug_toolbar',
+    )
+
+    MIDDLEWARE += (
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    )
+
+    DEBUG_TOOLBAR_CONFIG = {
+        'INTERCEPT_REDIRECTS': False,
+    }
