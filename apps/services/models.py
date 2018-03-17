@@ -1,16 +1,15 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from helpers.models import Publication
 
 
 class ServiceType(Publication):
 
-    title = models.CharField(verbose_name=_('service type title'), max_length=255)
-    slug = models.CharField(verbose_name=_('service type slug'), max_length=255, unique=True)
+    title = models.CharField(verbose_name='название', max_length=255)
+    slug = models.CharField(verbose_name='slug', max_length=255, unique=True)
 
     class Meta:
-        verbose_name_plural = _('services type items')
-        verbose_name = _('service type item')
+        verbose_name_plural = 'типы услуг'
+        verbose_name = 'тип услуги'
         ordering = ['-weight', 'title']
 
     def __str__(self):
@@ -19,13 +18,13 @@ class ServiceType(Publication):
 
 class Service(Publication):
 
-    service_type = models.ForeignKey(ServiceType, verbose_name=_('service type'), on_delete=models.CASCADE)
-    title = models.CharField(verbose_name=_('service title'), max_length=255)
-    description = models.TextField(verbose_name=_('service description'), blank=True)
+    service_type = models.ForeignKey(ServiceType, verbose_name='тип услуги', on_delete=models.CASCADE)
+    title = models.CharField(verbose_name='название', max_length=255)
+    description = models.TextField(verbose_name='описание', blank=True)
 
     class Meta:
-        verbose_name_plural = _('services items')
-        verbose_name = _('service item')
+        verbose_name_plural = 'услуги'
+        verbose_name = 'услуга'
         ordering = ['-weight', 'title']
 
     def __str__(self):
@@ -34,13 +33,13 @@ class Service(Publication):
 
 class ServiceParametr(models.Model):
 
-    service = models.ForeignKey(Service, verbose_name=_('service item'), on_delete=models.CASCADE)
-    title = models.CharField(verbose_name=_('service parametr title'), max_length=255)
-    content = models.TextField(verbose_name=_('service parametr content'))
+    service = models.ForeignKey(Service, verbose_name='услуга', on_delete=models.CASCADE)
+    title = models.CharField(verbose_name='заголовок', max_length=255)
+    content = models.TextField(verbose_name='содержимое')
 
     class Meta:
-        verbose_name_plural = _('services parametrs items')
-        verbose_name = _('service parametr item')
+        verbose_name_plural ='параметры услуги'
+        verbose_name = 'параметр услуги'
         ordering = ['service', 'title']
 
     def __str__(self):
@@ -49,13 +48,13 @@ class ServiceParametr(models.Model):
 
 class ServiceImage(models.Model):
 
-    service = models.ForeignKey(Service, verbose_name=_('service item'), on_delete=models.CASCADE)
-    title = models.CharField(verbose_name=_('service image title'), max_length=255)
-    image = models.ImageField(verbose_name=_('service image'), upload_to='services')
+    service = models.ForeignKey(Service, verbose_name='услуга', on_delete=models.CASCADE)
+    title = models.CharField(verbose_name='название', max_length=255)
+    image = models.ImageField(verbose_name='изображение', upload_to='services')
 
     class Meta:
-        verbose_name_plural = _('services images items')
-        verbose_name = _('service image item')
+        verbose_name_plural = 'изображения услуг'
+        verbose_name = 'изображение услуги'
         ordering = ['service', 'title']
 
     def __str__(self):
